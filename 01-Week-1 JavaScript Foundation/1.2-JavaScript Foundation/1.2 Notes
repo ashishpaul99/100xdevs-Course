@@ -1,0 +1,553 @@
+1. Why Javascript?
+2. Interpreted vs Compiled languages
+3. Why JS>> Other languages in some use-cases
+4. Strict vs dynamic languages
+5. Single threaded nature of JS?
+6. Simple primitive in JS(number, strings, booleans)
+7. Complex primitives in JS(Arrays,Objects)
+8. Functions in Javascript
+9. Practice problems solving 
+10. Callback fuctions, Event loop, Callback queue, Asynchronous programming
+11. Callback hell and promises
+
+1.Why languages?
+
+Application -----> RAM, SSD
+->Application runs on RAM.
+->When we open application it's run on RAM.
+
+1.1 What goes into RAM?
+->zero's and one's
+->bunch of numbers run in RAM.
+->All programming languages are high level languages.
+->Compiler converts high level languages into zero's and one's(low level languages) which goes into RAM.
+
+->Application -->high level language(C, C++, JS) ----------->  low level language -------> RAM, SSD
+                                                 Compiler
+1.2 What have we learned?
+->languages are used to write applications 
+->Developers write high level code in these languages.
+->Every languagehas a compiler which converts the developer code into 0's and 1's.
+
+Compiler- converts high level languages into zero's and one's(low level languages) which goes into RAM.
+
+2. Interpreted vs Compiled languages
+1. Compiled languages
+->first need to compile, then need to run.
+->usually don't compile if there is an error in code.
+eg:- C++, Java, Rust, Golang
+
+eg-1:
+1. Running c++ Language
+step-1: write code     -->    a.cpp
+step-2: compile code   -->    g++ a.cpp(cmd line)
+step-3: run the code(put it in ram) --> a.cpp (cmd line)
+
+->In case of c++ (high level language converted) to binary then we can run it.
+
+2. Interpreted languages
+1. Usually go line by line
+2. Can run partially if the error comes later.
+eg:- Javascript, Python
+
+=>Running js
+->JS is Interpreted language.
+step-1: write code ----> console.log("hello");
+step-2: Run code   ----> node a.js -->Hello World
+
+->In case of Js code is written first and we can run it directly.
+
+->if there are 3 lines if error occurs at line-2 then it partially run the code.
+->Line 1 and 2 get executed and it gives error at line-2.
+
+eg-1:
+console.log("hello world"); // Output:hello world
+console.log(a);  -> gives error in this line
+
+
+What did we learn?
+->JS is an Interpreted language.
+->C++ is a compiled language.
+->Interpreted language go line by line while executing, can partially run until an error comes.
+
+3. Why JS is better than other languages?
+->Most browsers can only understand HTML/CSS/JS(not technically true).
+->JS can also be used for "Backend Development"
+->for most websites js is needed.
+
+4.Static vs dynamic languages
+
+C++ code -> it is static typed language.
+int number=5;    // declaration of an integer variable
+number="Hello";  //->this will cause a compile time error.
+
+Benfits - More strict code
+->it is super useful in big codebases.
+
+
+Javascript - it is dynamically typed language.
+let number=5;     //variable  intially holds a number
+number="Hello";   //variable now holds a string
+
+Output: "Hello"
+
+Benfits- Can move fast
+->it's okay to move fast.
+->but for bigger projects it's good have types that's reason typescript came into picture.
+->Typescript makes js static.
+
+5. Single threaded nature of JS
+->Js is single threaded language. 
+->it will use one core of a machine at a time.
+->All code run line by line one after the other.
+->JS always restricted to single core.
+->this is why it is considered to be a bad language for scalable systems.
+->There is a way to make it use all cores of your machine.
+->More practically, JS runs line by line and only
+One line runs at a time
+->There is a way to make it use all cores of your machine.
+->C++, Java, Rust are multi threaded language.
+
+
+
+
+
+1. Cores in machine
+->new machine -> specs
+->we look at cores
+->mac -> 10 cores(8 performance and 2 efficiency)
+->1 single core run certain code at the same time.
+->A single core cannot run two code at a time.
+->mORES
+->JAVA, C++  other languages spilt load across the core for running code. In this case process become optimal.
+
+eg:
+->it cannot run two files at a time by 1 core.
+two js files -> they runned by different cores.
+IDE, Zoom adn browsers running simultaineously.
+
+
+->The more the number of cores a machine contain the more the number of processes can start.
+
+2. Context switching-> every application no need of cpu at all times that's the reason single CPU runs all application simultaineously.
+
+->cluster module -> google it, sub rountines in multithreading languages.
+
+->More practically, JS runs line by line and only
+One line runs at a time.
+
+6. primitives
+1. Simple primitives
+1.1 Variables (let, var, const)
+->let keyword - is used define a varaible which is changing varriables.
+eg-1:
+let a=1;
+a=2;
+console.log(a); //Output:2
+
+->const keyword - used a variable whose variable won't change.
+
+
+1.2 Data types - strings, numbers and booleans
+let firstname="Ashish";   //String
+let age=18;          //numbers
+let isMarried=false; //booleans
+
+console.log("person name:"+firstname+" "+"age:"+age+" "+"isMarried:"+false);
+
+1.3 If/else
+eg-1:
+let firstname="Ashish"; 
+let isMarried=false;
+if(isMarried==true){
+    console.log(firstname+"is married");
+}else{
+    console.log(firstname+"is not married ")
+}
+
+
+1.4 Loops - For loop
+
+eg-1:
+let ans=0;
+for(let i=1;i<=100;i++){
+     ans=ans+i;
+}
+
+console.log(ans); 
+
+=>Problems
+1. Write the program to greet a person given their first and last name?
+let firstname="Ashish";
+let lastname="Paul";
+console.log(`Hello ${firstname} ${lastname}`)
+
+Output:
+Hello Ashish Paul
+
+2. Write a program that greets a person based on their gender. (If else)
+let gender="male";
+let name="joe";
+if(gender="male"){
+    console.log(`Mr.${name}`);
+}
+else{
+    console.log(`Misss.${name}`);
+}
+
+Output:
+Mr.joe
+
+3. Write a program that counts from 0 - 1000 and prints (for loop)
+for(let i=0;i<10;i++){
+    console.log(i);
+}
+
+Output:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+
+2. Complex primitives
+1. Arrays
+2. Objects
+
+
+2.1 Arrays - storing collection of data.
+// let person1="Ashish";
+// let person2="Paul";
+// let person3="John";
+
+// eg-1:
+// const person=["Ashish","Paul","john"];
+// for(let i=0;i<person.length;i++){
+//     console.log(person[i]);
+// }
+
+// Output:
+// Ashish
+// Paul
+// john
+
+2.2 Objects
+
+2.2.1 Storing data in objects
+eg-1:
+const user1={
+    firstname:"Ashish",
+    gender: "male"
+}
+
+console.log(user1.firstname); //Output:Ashish
+console.log(user1.gender);    //Output:male
+
+or
+console.log(user1['firstname']); //Output:Ashish
+console.log(user1['gender']); 
+
+2.2.2 Storing multiple objects in single array
+const allUsers=[
+    {
+        firstname:"Ashish",
+        age:"24"
+    },
+    {
+        firstname:"Paul",
+        age:"25"
+
+    }
+];
+
+console.log(allUsers[0]); //output:{firstname: 'Ashish', age: '24'}
+console.log(allUsers[1]); //Output:{firstname: 'Paul', age: '25'}
+
+//3. printing all objects in an array
+
+const allUsers=[
+    {
+        firstname:"Ashish",
+        age:"24"
+    },
+    {
+        firstname:"Paul",
+        age:"25"
+
+    }
+];
+
+for(let i=0;i<allUsers.length;i++){
+    console.log(allUsers[i]);
+ }
+
+//  Output:
+// {firstname: 'Ashish', age: '24'}
+// {firstname: 'Paul', age: '25'}
+
+
+
+
+4. Nested objects and Arrays
+4.1 Array of objects
+const allUsers=[
+    {
+        firstname:"Ashish",
+        age:"24",
+        gender:"male"
+    },
+    {
+        firstname:"Paul",
+        age:"25",
+        gender:"male"
+    },
+    {
+        firstname:"Rachel",
+        age:24,
+        gender:"female"
+    }
+];
+
+console.log(allUsers[2]["gender"]); //Output:female
+
+
+4.2 printing firstname of all male
+for(let i=0;i<allUsers.length;i++){
+    if(allUsers[i]["gender"]=="male"){
+        console.log(allUsers[i]["firstname"]);
+    }
+}
+// Output:
+// female
+
+=>Problems on complex primitives
+1. Write a program prints all the even numbers in an array
+let arr=[4,6,78,89,7,6];
+for(let i=0;i<arr.length;i++){
+    if(arr[i]%2==0){
+        console.log(arr[i]);
+    }
+}
+
+Output:
+4
+6
+78
+6
+
+2. Write a program to print the biggest number in an array
+let arr=[4,6,74,8,7,9];
+let max=arr[0];
+for(let i=0;i<arr.length;i++){
+    if(arr[i]>=max){
+        max=arr[i];  
+    }
+}
+console.log(max);
+
+Output:
+74
+
+3. Write a program that prints all the male people’s first name given a complex object
+const allUsers=[
+    {
+        firstname:"Ashish",
+        age:"24",
+        gender:"male"
+    },
+    {
+        firstname:"Paul",
+        age:"25",
+        gender:"male"
+    },
+    {
+        firstname:"Rachel",
+        age:24,
+        gender:"female"
+    }
+];
+
+for(let i=0;i<allUsers.length;i++){
+    if(allUsers[i]["gender"]=="male"){
+        console.log(allUsers[i]["firstname"]);
+    }
+}
+
+Output:
+Ashish
+Paul
+
+4. Write a program that reverses all the elements of an array
+let original_array=[1,2,3,4,5];
+let reversed_array=[];
+for(let i=original_array.length-1;i>=0;i--){
+    console.log(reversed_array.push(original_array[i]));
+}
+console.log(reversed_array);
+
+Output:
+1
+2
+3
+4
+5
+
+[5, 4, 3, 2, 1]
+
+5. Functions
+->Abstract out logic in your program
+->Take argument as an input
+->Return a value as an object
+->you can think of them as an independent program that is supposed to do something given an input.
+5. Function can take other fucntions as input this will confuse you(Callback).
+
+eg-1:
+1. Write a function that finds the sum of two numbers?
+function sum(a,b){
+    let sum=a+b;
+    console.log(sum);
+}
+sum(10,5);   //output:15
+ 
+=>alter-1:
+function sum(a,b){
+    let sum=a+b;
+    return sum;
+    
+}
+
+let retunr_sum=sum(10,5); // taking returned value
+console.log(retunr_sum);  // printing returned value
+
+Ouput:
+15
+
+=>alter-2:do things with the input and return an output
+function sum(a,b){
+    return a+b;
+}
+
+let retunr_sum=sum(10,5); // taking returned value
+console.log(retunr_sum);  // printing returned value
+
+Output:
+15
+
+
+
+5.1 Call back Examples
+->You are only allowed to call one function after this
+->How will you displayResult of a sum
+
+function sum(num1, num2) {
+    let result = num1 + num2;
+    return result;
+}
+
+function displayResult(data) {
+    console.log("Result of the sum is : " + data);
+}
+
+function displayResultPassive(data) {
+    console.log("Sum's result is : " + data);
+}
+
+
+Solution-1: Caling all fuctions at a time with single call.
+function sum(num1, num2) {
+    let result = num1 + num2;
+    displayResult(result);
+    displayResultPassive(result);
+}
+
+function displayResult(data) {
+    console.log("Result of the sum is : " + data);
+}
+
+function displayResultPassive(data) {
+    console.log("Sum's result is : " + data);
+}
+
+let ans=sum(10,5);
+console.log(ans);
+
+
+5.2 giving fuction as an argument
+
+
+eg-1:
+->giving fuction as an argument.
+->calling either of the fuctions.
+->here displayResult fuction is called.
+
+function sum(num1, num2,fnToCall) {
+    let result = num1 + num2;
+    fnToCall(result);
+}
+
+function displayResult(data) {
+    console.log("Result of the sum is : " + data);
+}
+
+function displayResultPassive(data) {
+    console.log("Sum's result is : " + data);
+}
+
+let ans=sum(10,5,displayResult);
+console.log(ans); 
+
+Output:Result of the sum is : 15
+
+
+eg-2:
+function calculateArithmetic(a,b,type){
+    if(type="sum"){
+        return a+b;
+    }
+    if(type="minus"){
+        return a-b;
+    }
+}
+
+const value=calculateArithmetic(10,2,"sum"); 
+console.log(value);
+Output:
+12
+
+eg-3:
+third variable is fuction
+function calculateArithmetic(a,b,operation){
+     const ans=operation(a,b);
+     return ans;
+}
+
+function sum(a,b){
+   return a+b;
+}
+
+function sub(a,b){
+    return a-b;
+}
+
+
+const value=calculateArithmetic(10,2,sum); 
+console.log(value);
+
+
+// 5.3 setTimeout function
+->Second argument is Number of seconds to wait before first argument run.
+->fuction given as argument to setTimeout function.
+eg-1:
+function greet(){
+    console.log("hello");
+}
+setTimeout(greet,3*1000);
+
+->time is in ms(millisecond)
