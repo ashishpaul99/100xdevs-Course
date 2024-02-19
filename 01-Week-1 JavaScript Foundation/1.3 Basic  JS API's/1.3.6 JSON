@@ -1,0 +1,55 @@
+// 4.5 JSON -> Javascript object notation
+// ->It stands for JavaScript Object Notation
+// ->It is a lightweight format for storing and transporting data
+// ->It is often used when data is sent from a server to a web page.
+// ->It is "self-describing" and easy to understand.
+
+//=>JSON Syntax Rules
+// Data is in name/value pairs
+// Data is separated by commas
+// Curly braces hold objects
+// Square brackets hold arrays
+
+// =>The JSON format is syntactically identical to the code for creating JavaScript objects.
+// Because of this similarity, a JavaScript program can easily convert JSON data into native JavaScript objects.
+
+// Javascript object
+// const user={
+//     name:"Ashish",
+//     age:24,
+//     gender:"male"
+// }
+// console.log(user['name']); //Ashish
+
+
+// ->Sending above data using JSON.
+// ->make object as string then it can be send it other side.
+// ->In order to transfer data we need interchange between js string and Object.
+// const user='{name:"Ashish", age:24,gender:"male"}'
+// console.log(user[1]);//n
+
+
+// 4.5.1 JSON Methods
+// 1. JSON.parse
+// 2. JSON.stringify
+
+// 1. JSON.parse- coneritng string into object.
+// ->Add quotes to keys and value.
+
+// eg-1:
+
+// const user='{"name":"Ashish", "age":24}';
+// const user1=JSON.parse(user);
+// console.log(user1['name']); 
+
+//Output:
+// Ashish
+
+// 2. JSON.stringify- Convert object into string.
+
+// eg-1:
+// const obj = { name: "Ashish", "age": 24 }
+// const str = JSON.stringify(obj);
+// console.log(str);
+// Output:
+// {"name":"Ashish","age":24}

@@ -1,0 +1,78 @@
+//=>1.3.3. Array Methods
+1. push() Method- it inserts element from the rear end.
+eg-1:
+let arr=[1,2,3];
+arr.push(2);
+console.log(arr);
+
+2. pop() Method- it pops out element from the rear end.
+eg-1:
+let arr=[1,2,3,2];
+arr.pop();
+console.log(arr); 
+
+3. shift() Method - it removes element from starting.
+eg-1:
+let arr=[1,2,3,5];
+arr.shift();
+console.log(arr);
+
+4. Unshift() Method - it adds element from front of the array.
+
+eg-1:
+let arr=[1,2,3,5];
+arr.unshift(10);
+console.log(arr); //Output:[10, 1, 2, 3, 5]
+
+5. Concat() Method- combining or merging two arrays.
+let arr1=[1,2,3];
+let arr2=[4,5,6];
+console.log(arr1.concat(arr2)); //Output:[1, 2, 3, 4, 5, 6]
+
+=>Call Backs
+->giving fuction as an argument.
+->logIt is called by passing log1 as an argument.
+->log2 is given as argument for the logIt function.
+->log2 is called by logIt function.
+
+eg-1:
+function log1(){
+    console.log("hello world1");
+}
+function log2(){
+    console.log("Hello Wolrd2");
+}
+
+function logIt(fn){
+    fn();
+}
+logIt(log2); //Output:Hello Wolrd2
+
+// eg-1:
+->for each fuction excepts fuction as an input.
+->logThin function takes each element and prints each element.
+
+const arr=[1,2,3,5];
+function logThing(str){
+    console.log(str);
+}
+arr.forEach(logThing);
+
+// Output:
+// 1
+// 2
+// 3
+// 5
+
+
+// alter
+logThing(1);
+logThing(2);
+logThing(3);
+logThing(5);
+
+Output:
+1
+2
+3
+5

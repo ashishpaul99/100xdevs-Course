@@ -1,0 +1,6 @@
+4.4 Date Class In Javascript
+-> it is global class.
+
+eg-1:
+const currentDate=new Date();
+console.log(currentDate.getMonth());

@@ -1,0 +1,16 @@
+// 5. High Level Mathematical Functions
+// 1. Math.random()- it gives random number between 0 and 1.
+// eg-1:
+// ->Random number between 1 and 10
+// const num=Math.floor((Math.random()*10+1));
+// console.log(num);
+
+
+// 2. Math.floor()
+// eg-1:
+// const num=Math.floor(2.366);
+// console.log(num); //Output:2
+
+// // 3. Math.ceil()
+// const num=Math.ceil(2.366);
+// console.log(num);

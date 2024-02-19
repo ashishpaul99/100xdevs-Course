@@ -1,0 +1,97 @@
+1.3.4. Javascript Classe
+const dog={
+    name:'dog',
+    legCount:4,
+    speaks:"bow bow"
+}
+const cat={
+    name:'cat',
+    legCount:4,
+    speaks:"Meow Meow"
+}
+
+console.log("animal "+dog.name+" with "+dog.legCount+" legs "+"speaks "+dog.speaks);//Output:nimal dog with 4 legs speaks bow bow
+console.log("animal "+cat.name+" with "+cat.legCount+" legs "+"speaks "+cat.speaks); //Output:animal cat with 4 legs speaks Meow Meow
+
+// =>by using function
+function callAnimal(animalName){
+    console.log("animal "+animalName.name+" with "+animalName.legCount+" legs "+"speaks "+animalName.speaks);
+}
+callAnimal(dog); //Output:animal dog with 4 legs speaks bow bow
+
+// =>by using function
+function callAnimal(animalName){
+    console.log("animal "+animalName.name+" with "+animalName.legCount+" legs "+"speaks "+animalName.speaks);
+}
+callAnimal(dog); //Output:animal dog with 4 legs speaks bow bow
+
+//4. 1. Classes- Blue print of the object
+// ->classes has attributes and fuctions
+
+
+
+// eg-1:
+// class Animal {
+//     constructor(name, legCount, speaks) {
+//         this.name = name;
+//         this.legCount = legCount;
+//         this.speaks = speaks
+//     }
+//     speak() {
+//         console.log("hi there " + this.speaks);
+//     }
+//    legCounts() {
+//         console.log(this.name + " has " + this.legCount + " legs");
+//     }
+
+// }
+
+// 4.2 . Object- Instance of class
+// ->creating object of class
+// creating animal object
+// let dog = new Animal("dog", 4, "bow bow");
+// dog.speak();     //hi there bow bow
+// dog.legCounts(); //dog has 4 legs
+
+// let cat = new Animal("cat", 4, "Meow Meow");
+// cat.speak();      //hi there Meow Meow
+// cat.legCounts();  //cat has 4 legs
+
+// 4.3 Static Function
+// ->static function are directly called by class name.
+// ->these are associated with classes not objects.
+// ->they are called by using class name.
+// ->normal functions are called using object.
+
+
+// eg-1:
+
+// class Animal {
+//     constructor(name, legCount, speaks) {
+//         this.name = name;
+//         this.legCount = legCount;
+//         this.speaks = speaks
+//     }
+
+//     static myType(){
+//         console.log("Animal")
+//     }
+//     speak() {
+//         console.log("hi there " + this.speaks);
+//     }
+//     legCounts() {
+//         console.log(this.name + " has " + this.legCount + " legs");
+//     }
+
+// }
+
+// static methods are directly called
+// Animal.myType(); 
+
+// ->normal functions are called using object.
+// let dog=new Animal("dog",4,"bow bow");
+// dog.speak();
+
+// Output:
+// Animal
+// hi there bow bow

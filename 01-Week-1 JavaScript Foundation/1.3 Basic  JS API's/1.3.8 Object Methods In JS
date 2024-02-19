@@ -1,0 +1,52 @@
+// 6. Object Methods in Js
+
+// Object.keys(obj)
+// ->Object is static class.
+// ->key is static method in object class.
+
+
+// const obj = { name: "Ashish", "age": 24, gender:"male" };
+
+// function objectMethods(obj){
+
+//     console.log("Original Objects:",obj);
+
+//     let keys=Object.keys(obj);
+//     console.log("Keys in object "+keys);
+
+//     let values=Object.values(obj);
+//     console.log("Values in object "
+//     +values);
+
+//     let entries=Object.entries(obj);
+//     console.log("Entries in Object "+entries);
+
+//     // checks wheather prperty is present or not
+//     let hasProp=Object.hasOwnProperty(obj);
+//     console.log("Wheather properties present or not: " + hasProp);
+
+//     // Merges to objects
+
+//     let mergeObject=Object.assign({},obj,{location:"Hyderabad",id:1246471 });
+//     console.log(mergeObject);
+
+// }
+
+// objectMethods(obj);
+
+// Original Objects: {name: 'Ashish', age: 24, gender: 'male'}
+// Keys in object name,age,gender
+// Values in object Ashish,24,male
+// Entries in Object name,Ashish,age,24,gender,male
+// Wheather properties present or not: false
+// {name: 'Ashish', age: 24, gender: 'male', location: 'Hyderabad', id: 1246471}
+
+
+
+
+//3. hasOwnProperty - checks wheather prperty is present or not
+// let obj1={
+//   name:"Ashish"
+// }
+// console.log(obj1.hasOwnProperty("name")); //true
+// console.log(obj1.hasOwnProperty("age"));   //false

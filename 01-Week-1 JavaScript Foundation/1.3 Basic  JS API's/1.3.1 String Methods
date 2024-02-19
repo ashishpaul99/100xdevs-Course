@@ -1,0 +1,146 @@
+=>1.3.1 Javascript String Methods
+1. String length Method
+->finding length of the string using length Method
+eg:
+function getLength(str){
+   console.log("Original String is ",str);
+   console.log("Length of the string is ",str.length)
+}
+
+getLength("Hello World");
+
+2. IndexOf Method
+->it finds the index of the target letter ot word.
+
+
+2.1 IndexOf() Method
+eg-1:
+function findIndexOf(str,target){
+    console.log("Original String:"+str)
+    console.log("index of Paul:",str.indexOf(target));
+}
+
+findIndexOf("Ashish Paul", "Paul");
+
+Output:
+Original String:Ashish Paul
+strings.js:17 index of Paul: 7
+
+
+
+2.2 lastIndexOf(target) Method
+=>getting last word index out of 
+ similar words.
+
+
+eg-2:
+function findIndexOf(str,target){
+    console.log("Original String:"+str)
+    console.log("index of Paul:",str.lastIndexOf(target));
+}
+
+findIndexOf("Ashish Paul Paul Paul", "Paul");
+
+3. slice() Method
+->getting specific part out of string.
+->it takes start and end index as input.
+->it does not include last index.
+
+// eg-1:
+// let name="Ashish Paul";
+// console.log(name.slice(0,6));
+
+// eg-2:
+function getSlice(str,start,end){
+    console.log("Original String:"+str);
+    console.log("Sliced String:"+str.slice(start,end));
+}
+
+getSlice("Ashish Paul",7,11);
+
+// Output:
+// Original String:Ashish Paul
+// strings.js:47 Sliced String:Paul
+
+=>slice behind the scene method
+function cutIt(str,start,end){
+    let newStr="";
+    for(let i=0;i<str.length;i++){
+        if(i>=start && i<end){
+            newStr=newStr+str[i];
+        }
+    }
+    return  newStr;
+}
+
+let value="Ashish Paul";
+cutIt(value,0,6);
+console.log(cutIt(value,0,5));
+
+
+4. substr(start,length)
+
+eg-1:it prints 6 characters from index 0
+let name="Ashish";
+console.log(name.substr(0,6));
+
+5. replace(target,replacement) String
+const str="Hello World";
+console.log("Original String:"+str)
+console.log("Replace String:"+str.replace("World","Ashish"))
+
+6. split() Method
+->split a string into an array given a delimeter
+
+eg-1:
+->extracting words from sentence
+const value="hello my name is Ashish";
+const words=value.split(" ");
+console.log(words);
+
+Output:
+(5) ['hello', 'my', 'name', 'is', 'Ashish']
+
+eg-2: "," is delimeter
+const value="hello, my name is Ashish";
+const words=value.split(",");
+console.log(words);
+
+Output:
+['hello', ' my name is Ashish']
+
+eg-3: 'h' is delimeter
+const value="hello, my name is Ashish";
+const words=value.split("h");
+console.log(words);
+
+Output:
+['', 'ello, my name is As', 'is', '']
+
+7. trim() Method
+->trim extra spaces at the begining and end of string.
+->it will not trim middle space.
+
+eg-1:
+const name="      Ashish Paul       ";
+console.log(name.trim());
+
+Output:
+Ashish Paul
+
+8. toUpperCase() Method
+eg-1:
+let value="Ashish Paul";
+console.log(value.toUpperCase());
+
+Output:
+ASHISH PAUL
+
+
+9. toLowerCase() Method
+eg-1:
+let value="Ashish Paul";
+console.log(value.toLowerCase());
+
+Output:
+ashish paul
