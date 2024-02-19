@@ -93,7 +93,7 @@ Output: "Hello"
 
 Benfits- Can move fast
 ->it's okay to move fast.
-->but for bigger projects it's good have types that's reason typescript came into picture.
+->but for bigger projects it's good have types that's the reason typescript came into picture.
 ->Typescript makes js static.
 
 5. Single threaded nature of JS
@@ -119,7 +119,8 @@ One line runs at a time
 ->1 single core run certain code at the same time.
 ->A single core cannot run two code at a time.
 ->mORES
-->JAVA, C++  other languages spilt load across the core for running code. In this case process become optimal.
+->JAVA, C++  other languages spilt load across the core for running code. In this case process
+become optimal.
 
 eg:
 ->it cannot run two files at a time by 1 core.
@@ -129,7 +130,8 @@ IDE, Zoom adn browsers running simultaineously.
 
 ->The more the number of cores a machine contain the more the number of processes can start.
 
-2. Context switching-> every application no need of cpu at all times that's the reason single CPU runs all application simultaineously.
+2. Context switching-> every application doesn't need of cpu at all times that's the reason 
+single CPU runs all application simultaineously.
 
 ->cluster module -> google it, sub rountines in multithreading languages.
 
@@ -198,7 +200,7 @@ else{
 Output:
 Mr.joe
 
-3. Write a program that counts from 0 - 1000 and prints (for loop)
+3. Write a program that counts from 0 - 10 and prints (for loop)
 for(let i=0;i<10;i++){
     console.log(i);
 }
@@ -405,8 +407,9 @@ Output:
 ->Abstract out logic in your program
 ->Take argument as an input
 ->Return a value as an object
-->you can think of them as an independent program that is supposed to do something given an input.
-5. Function can take other fucntions as input this will confuse you(Callback).
+->you can think of them as an independent program that is supposed to do something given an 
+input.
+5. Function can take other fucntions as input (Callback function).
 
 eg-1:
 1. Write a function that finds the sum of two numbers?
