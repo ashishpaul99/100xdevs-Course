@@ -1,0 +1,173 @@
+Foundation class for 100xdevs cohort
+Part-1: Setting up an IDE
+1. Whar we're learning 
+1. VS Code
+2. HTML
+3. class
+4. JS
+5. DOM
+6. Assignments
+
+2. What we'll learn practically 
+->Small stuff
+1. Tags
+2. Attributes
+3. inline styles(bf colors, fonts)
+4. JS Basics, data types, loops
+
+->Big stuff
+1. External styles, classes and ids
+2. Flexbox
+3. Connecting JS to HTML(Selectors, DOM)
+4. Chrome Dev tools
+
+
+3. What we are building?
+1. Zerodha landing page
+Stage-1(HTML only)
+Stage-2(HTML+CSS)
+Stage-3(JS)- Create a portfolio returns calculator.
+
+captial             
+years              4 cr
+interest
+        calculate
+
+4. Before we start
+4.1 What are browsers? How do they render websites?
+-> request is done on client side.
+-> information given by server to the browser.
+->browser renders the html/css/js files.
+
+
+4.2 What purpose do HTML/CSS/JS serve
+->To create websites.
+
+5. IDE
+1. VS Code
+2. Vim
+3. WebStorm
+
+->how much of this do we actually use in the industry
+1. html -> very minimal
+2. CSS  -> minimal
+3. JS   -> heavy
+
+
+Part-2: HTML Basics(Tags and Attributes)
+1. HTML- Define the structure of your website.
+->What all should be placed on website defined by html.
+
+2. Jargons we need to know
+i. HTML Tags
+->primitives given by html to create website.
+->tags are needed for better structure.
+
+->Basics Tags
+1. <html>
+2. <head>
+3. <title>
+4. <div> / <span>
+5. <h1>...<h6>
+6. <p>
+7. <img>
+8. <a>
+9. <input>
+10. <button>
+11. <b>/ <i>
+12. <center>
+13. <body>
+
+1.<div> tag
+->tag takes whole block of space.
+
+2.<span> tag
+->span takes as much need.
+
+3.<a> tag
+->opening link in new tag use target attribute.
+eg:
+ <a href="https://www.google.com/" target="_blank">Go to google</a>
+
+
+
+
+ii. Attrubutes
+->HTML attributes provide additional information about HTML elements.
+->Extra thing given to tag.
+
+eg:
+<img src="a.png">
+<a href="google.com">
+<button onclick="">
+<input id="username">
+
+
+
+
+
+1. target attribute
+->opening link in new tag use target attribute.
+eg:
+ <a href="https://www.google.com/" target="_blank">Go to google</a>
+
+2. placeholder
+->The short hint is displayed in the input field before the user enters a value.
+
+Part-3: CSS Basics
+1. CSS- They let you add styles to your website(colors, font sizes, background colors..) used for positioning things on the page.
+
+
+2. Common styling attributes
+1. color
+2. background
+3. border-radius
+4. border
+5. padding/margin
+6. box-shadow
+
+eg:
+background-color: aqua;
+border-radius: 10px;
+border:2px solid black;
+
+->Web dev tools can be used for debuging.
+->Inspect -> styles 
+->border expects size, kind of border and color.
+->Three length values and a color 
+->right or left(-ve) <length> | up(-ve) or down  <length> | all <length> | <color> 
+->box-shadow: 10px 5px 5px black;
+
+1. Padding -> it puts breathing space inside the box.
+2. Margin  -> it puts breathing space outside the box.
+3. box-shadow -> it adds shadow to content block or border.
+4. float -> The float property specifies whether an element should float to the left, right, or not at all.
+
+
+2. Zerodha Landing Page Part-2(CSS)
+1. how to position? 
+->divs always take up all the space available horizontally.
+->spans only take up as much space as needed.
+
+2. can we make divs take only the space they need?
+
+->check the picture
+
+3. Taking all nav links to right.
+Sign up, About, Products, Pricing, Support.
+
+->by using float property we can take all nav links to right.(dumb way)
+->float property - The float property specifies whether an element should float to the left, right, or not at all.
+->use flex box instead of float to place elements.
+
+4. Flex box
+->display:flex  on parent makes all elements siblings reside in the same line.
+->Flex box is the best to position elements.
+
+=>Other alternative
+->Absolute positioning
+->float
+
+
+
+
