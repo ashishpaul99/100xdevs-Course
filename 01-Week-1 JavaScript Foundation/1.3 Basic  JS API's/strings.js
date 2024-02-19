@@ -1,0 +1,523 @@
+// 1. String length Method
+// function getLength(str){
+//    console.log("Original String is ",str);
+//    console.log("Length of the string is ",str.length)
+// }
+
+// getLength("Hello World");
+
+// Output:
+// Original String is Hello World
+// strings.js:3 Length of the string is 11
+
+// 2. indexOf() Method
+
+// 2.1 IndexOf() Method
+// eg-1:
+// function findIndexOf(str,target){
+//     console.log("Original String:"+str)
+//     console.log("index of Paul:",str.indexOf(target));
+// }
+
+// findIndexOf("Ashish Paul", "Paul");
+
+// Output:
+// Original String:Ashish Paul
+// strings.js:17 index of Paul: 7
+
+// 2.2 lastIndexOf(target) Method
+// eg-2:
+// function findIndexOf(str,target){
+//     console.log("Original String:"+str)
+//     console.log("index of Paul:",str.lastIndexOf(target));
+// }
+
+// findIndexOf("Ashish Paul Paul Paul", "Paul");
+
+
+// 3. slice() Method
+
+// eg-1:
+// let name="Ashish Paul";
+// console.log(name.slice(0,6));
+
+// eg-2:
+// function getSlice(str,start,end){
+//     console.log("Original String:"+str);
+//     console.log("Sliced String:"+str.slice(start,end));
+// }
+
+// getSlice("Ashish Paul",7,11);
+
+// Output:
+// Original String:Ashish Paul
+// strings.js:47 Sliced String:Paul
+
+// =>slice behind the scene method
+// function cutIt(str,start,end){
+//     let newStr="";
+//     for(let i=0;i<str.length;i++){
+//         if(i>=start && i<end){
+//             newStr=newStr+str[i];
+//         }
+//     }
+//     return  newStr;
+// }
+
+// let value="Ashish Paul";
+// cutIt(value,0,6);
+// console.log(cutIt(value,0,5));
+
+// =>Splice() method
+// const months = ['Jan', 'March', 'April', 'June'];
+// months.splice(1, 0, 'Feb');
+// console.log(months);
+
+
+// 4. substr(start,length)
+
+// eg-1:it prints 6 characters from index 0
+// let name="Ashish";
+// console.log(name.substr(0,6));
+
+// 5. replace(target, replace)
+// const str="Hello World";
+// console.log("Original String:"+str)
+// console.log("Replace String:"+str.replace("World","Ashish"))
+
+// 6. split() Method
+
+// eg-1:
+// ->extracting words from sentence
+// const value="hello my name is Ashish";
+// const words=value.split(" ");
+// console.log(words);
+
+// Output:
+// (5) ['hello', 'my', 'name', 'is', 'Ashish']
+
+// eg-2:
+// const value="hello, my name is Ashish";
+// const words=value.split(",");
+// console.log(words);
+
+// Output:
+// ['hello', ' my name is Ashish']
+
+// eg-3: h is delimeter
+// const value="hello, my name is Ashish";
+// const words=value.split("h");
+// console.log(words);
+
+// Output:
+// ['', 'ello, my name is As', 'is', '']
+
+// 7. trim() Method
+
+// eg-1:
+// const name="      Ashish Paul       ";
+// console.log(name.trim());
+
+// Output:
+// Ashish Paul
+
+
+
+// 8. toUpperCase() Method
+// eg-1:
+// let value="Ashish Paul";
+// console.log(value.toUpperCase());
+
+// Output:
+// ASHISH PAUL
+
+
+// 9. toLowerCase() Method
+// eg-1:
+// let value="Ashish Paul";
+// console.log(value.toLowerCase());
+
+// Output:
+// ashish paul
+
+
+
+
+// 10. parseInt() Method
+// console.log(parseInt("45"));
+// console.log(parseInt("4p"));
+// console.log(parseInt("3.14"));
+
+// Output:
+// 45
+// 4
+// 3
+
+// 11. parseFloat() Method
+// console.log(parseFloat("3.14")); //Output:3.14
+
+// =>Array Methods
+// 1. push()-
+// eg-1:
+// let arr=[1,2,3];
+// arr.push(2);
+// console.log(arr);
+
+// Output: 
+// [1, 2, 3, 2]
+
+//  2.pop() Methods
+// eg-1:
+// let arr=[1,2,3,2];
+// arr.pop();
+// console.log(arr);  //Output:[1, 2, 3]
+
+
+
+// 3. shift() Method
+// eg-1:
+// let arr=[1,2,3,5];
+// arr.shift();
+// console.log(arr); //Output:[2, 3, 5]
+
+// 4. unshift() Method
+// eg-1:
+// let arr=[1,2,3,5];
+// arr.unshift(10);
+// console.log(arr); //Output:[10, 1, 2, 3, 5]
+
+// 5. Concat() Method
+// let arr1=[1,2,3];
+// let arr2=[4,5,6];
+// console.log(arr1.concat(arr2)); //Output:[1, 2, 3, 4, 5, 6]
+
+
+// =>Call Backs
+// ->giving fuction as an argument.
+// ->log2 is given as argument for the logIt function.
+
+
+// function log1(){
+//     console.log("hello world1");
+// }
+// function log2(){
+//     console.log("Hello Wolrd2");
+// }
+
+// function logIt(fn){
+//     fn();
+// }
+
+// logIt(log2); //Output:Hello Wolrd2
+
+// eg-1:
+// const arr=[1,2,3,5];
+// function logThing(str){
+//     console.log(str);
+// }
+
+// arr.forEach(logThing);
+
+// Output:
+// 1
+// 2
+// 3
+// 5
+
+
+// alter
+// logThing(1);
+// logThing(2);
+// logThing(3);
+// logThing(5);
+
+// Output:
+// 1
+// 2
+// 3
+// 5
+
+// 4. Javascript Classes
+// const dog={
+//     name:'dog',
+//     legCount:4,
+//     speaks:"bow bow"
+// }
+// const cat={
+//     name:'cat',
+//     legCount:4,
+//     speaks:"Meow Meow"
+// }
+
+// console.log("animal "+dog.name+" with "+dog.legCount+" legs "+"speaks "+dog.speaks);//Output:nimal dog with 4 legs speaks bow bow
+// console.log("animal "+cat.name+" with "+cat.legCount+" legs "+"speaks "+cat.speaks); //Output:animal cat with 4 legs speaks Meow Meow
+
+// =>by using function
+// function callAnimal(animalName){
+//     console.log("animal "+animalName.name+" with "+animalName.legCount+" legs "+"speaks "+animalName.speaks);
+// }
+// callAnimal(dog); //Output:animal dog with 4 legs speaks bow bow
+
+// 1. Classes- Blue print of the object
+// ->classes has attributes and fuctions
+
+
+
+// eg-1:
+// class Animal {
+//     constructor(name, legCount, speaks) {
+//         this.name = name;
+//         this.legCount = legCount;
+//         this.speaks = speaks
+//     }
+//     speak() {
+//         console.log("hi there " + this.speaks);
+//     }
+//    legCounts() {
+//         console.log(this.name + " has " + this.legCount + " legs");
+//     }
+
+// }
+
+// 2. Object- Instance of class
+// ->creating object of class
+// creating animal object
+// let dog = new Animal("dog", 4, "bow bow");
+// dog.speak();     //hi there bow bow
+// dog.legCounts(); //dog has 4 legs
+
+// let cat = new Animal("cat", 4, "Meow Meow");
+// cat.speak();      //hi there Meow Meow
+// cat.legCounts();  //cat has 4 legs
+
+// 3. Static Function
+// ->static function are directly called by class name.
+// ->these are associated with classes not objects.
+// ->they are called by using class name.
+// ->normal functions are called using object.
+
+
+// eg-1:
+
+// class Animal {
+//     constructor(name, legCount, speaks) {
+//         this.name = name;
+//         this.legCount = legCount;
+//         this.speaks = speaks
+//     }
+
+//     static myType(){
+//         console.log("Animal")
+//     }
+//     speak() {
+//         console.log("hi there " + this.speaks);
+//     }
+//     legCounts() {
+//         console.log(this.name + " has " + this.legCount + " legs");
+//     }
+
+// }
+
+// static methods are directly called
+// Animal.myType(); 
+
+// ->normal functions are called using object.
+// let dog=new Animal("dog",4,"bow bow");
+// dog.speak();
+
+// Output:
+// Animal
+// hi there bow bow
+
+// 4.4 Date Class In Javascript
+// const currentDate=new Date();
+// console.log(currentDate.getMonth());
+// console.log(currentDate.getDate());
+// console.log(currentDate.getFullYear());
+
+
+// 4.5 JSON -> Javascript object notation
+// ->It stands for JavaScript Object Notation
+// ->It is a lightweight format for storing and transporting data
+// ->It is often used when data is sent from a server to a web page.
+// ->It is "self-describing" and easy to understand.
+
+//=>JSON Syntax Rules
+// Data is in name/value pairs
+// Data is separated by commas
+// Curly braces hold objects
+// Square brackets hold arrays
+
+// =>The JSON format is syntactically identical to the code for creating JavaScript objects.
+// Because of this similarity, a JavaScript program can easily convert JSON data into native JavaScript objects.
+
+// Javascript object
+// const user={
+//     name:"Ashish",
+//     age:24,
+//     gender:"male"
+// }
+// console.log(user['name']); //Ashish
+
+
+// ->Sending above data using JSON.
+// ->make object as string then it can be send it other side.
+// ->In order to transfer data we need interchange between js string and Object.
+// const user='{name:"Ashish", age:24,gender:"male"}'
+// console.log(user[1]);//n
+
+
+// 4.5.1 JSON Methods
+// 1. JSON.parse
+// 2. JSON.stringify
+
+// 1. JSON.parse- coneritng string into object.
+// ->Add quotes to keys and value.
+
+// eg-1:
+
+// const user='{"name":"Ashish", "age":24}';
+// const user1=JSON.parse(user);
+// console.log(user1['name']); 
+
+//Output:
+// Ashish
+
+// 2. JSON.stringify- Convert object into string.
+
+// eg-1:
+// const obj = { name: "Ashish", "age": 24 }
+// const str = JSON.stringify(obj);
+// console.log(str);
+// Output:
+// {"name":"Ashish","age":24}
+
+
+// 5. High Level Mathematical Functions
+// 1. Math.random()- it gives random number between 0 and 1.
+// eg-1:
+// ->Random number between 1 and 10
+// const num=Math.floor((Math.random()*10+1));
+// console.log(num);
+
+
+// 2. Math.floor()
+// eg-1:
+// const num=Math.floor(2.366);
+// console.log(num); //Output:2
+
+// // 3. Math.ceil()
+// const num=Math.ceil(2.366);
+// console.log(num);
+
+// 6. Object Methods in Js
+
+// Object.keys(obj)
+// ->Object is static class.
+// ->key is static method in object class.
+
+
+// const obj = { name: "Ashish", "age": 24, gender:"male" };
+
+// function objectMethods(obj){
+
+//     console.log("Original Objects:",obj);
+
+//     let keys=Object.keys(obj);
+//     console.log("Keys in object "+keys);
+
+//     let values=Object.values(obj);
+//     console.log("Values in object "
+//     +values);
+
+//     let entries=Object.entries(obj);
+//     console.log("Entries in Object "+entries);
+
+//     // checks wheather prperty is present or not
+//     let hasProp=Object.hasOwnProperty(obj);
+//     console.log("Wheather properties present or not: " + hasProp);
+
+//     // Merges to objects
+
+//     let mergeObject=Object.assign({},obj,{location:"Hyderabad",id:1246471 });
+//     console.log(mergeObject);
+
+// }
+
+// objectMethods(obj);
+
+// Original Objects: {name: 'Ashish', age: 24, gender: 'male'}
+// Keys in object name,age,gender
+// Values in object Ashish,24,male
+// Entries in Object name,Ashish,age,24,gender,male
+// Wheather properties present or not: false
+// {name: 'Ashish', age: 24, gender: 'male', location: 'Hyderabad', id: 1246471}
+
+
+
+
+//3. hasOwnProperty - checks wheather prperty is present or not
+// let obj1={
+//   name:"Ashish"
+// }
+// console.log(obj1.hasOwnProperty("name")); //true
+// console.log(obj1.hasOwnProperty("age"));   //false
+
+
+// revision
+class Animal{
+  constructor(name,legCount,speaks){
+    this.name=name;
+    this.legCount=legCount;
+    this.speaks=speaks;
+  }
+
+  static move(){
+      console.log(this.name+" walks fast")
+  }
+  nameIt(){
+    console.log("Animal Name:"+this.name);
+  }
+  legcount(){
+    console.log("leg count:"+this.legCount);
+  }
+  speak(){
+    console.log("speaks:"+this.speaks);
+  }
+}
+
+
+let dog=new Animal("dog",4,"bow bow");
+dog.nameIt();
+dog.legcount();
+dog.speak();
+
+Animal.move();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
