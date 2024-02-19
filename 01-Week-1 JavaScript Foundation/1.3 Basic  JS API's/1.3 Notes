@@ -249,7 +249,7 @@
 // 5
 
 
-// 4. Javascript Classe
+// 4. Javascript Classes
 // const dog={
 //     name:'dog',
 //     legCount:4,
@@ -362,7 +362,8 @@
 // Square brackets hold arrays
 
 // =>The JSON format is syntactically identical to the code for creating JavaScript objects.
-// Because of this similarity, a JavaScript program can easily convert JSON data into native JavaScript objects.
+// Because of this similarity, a JavaScript program can easily convert JSON data into native 
+JavaScript objects.
 
 // Javascript object
 // const user={
@@ -384,7 +385,7 @@
 // 1. JSON.parse
 // 2. JSON.stringify
 
-// 1. JSON.parse- coneritng string into object.
+// 1. JSON.parse- converitng string into object.
 // ->Add quotes to keys and value.
 
 // eg-1:
@@ -421,7 +422,7 @@
 
 // // 3. Math.ceil()
 // const num=Math.ceil(2.366);
-// console.log(num);
+// console.log(num); //3
 
 // 6. Object Methods in Js
 
@@ -446,12 +447,11 @@
 //     let entries=Object.entries(obj);
 //     console.log("Entries in Object "+entries);
 
-//     // checks wheather prperty is present or not
+//     // checks wheather property is present or not
 //     let hasProp=Object.hasOwnProperty(obj);
 //     console.log("Wheather properties present or not: " + hasProp);
 
 //     // Merges to objects
-
 //     let mergeObject=Object.assign({},obj,{location:"Hyderabad",id:1246471 });
 //     console.log(mergeObject);
 
@@ -474,7 +474,7 @@
 //   name:"Ashish"
 // }
 // console.log(obj1.hasOwnProperty("name")); //true
-// console.log(obj1.hasOwnProperty("age"));   //false
+// console.log(obj1.hasOwnProperty("age"));  //false
 
 
 // revision
