@@ -1,0 +1,454 @@
+// 2.1 | Revision of Promises, Async JS    Date:22/02/24    Time:11:00 AM
+
+// 1. Topics to be covered in this lecture
+// 1. Callbacks
+// 2. Async functions
+// 3. Promises
+// 4. JS functions(map,filter)
+// 5. Assignment
+
+// 2. Three humps in Full Stack Javascript Development
+// 1. Async nature of JS
+// 2. React
+// 3. JS to TS
+
+// 3. Callbacks syntax vs Promise(then) syntax vs  Async/await syntax
+
+// 1. Callback syntax
+// function readData(fn){
+//     fn("hello");
+// }
+
+// async function main(){
+//     readData(function(value){
+//         console.log(value);
+//     });
+// }
+// main();
+
+// Output:
+// hello
+
+// 2. Promise(the) syntax
+
+// function readData(){
+//     const pr=new Promise(function(Resolve,reject){
+//         Resolve("hello")
+//     })
+//     return pr;
+// }
+
+// function main(){
+//     readData().then(function(value){
+//         console.log(value);
+//     });
+// }
+
+// main();
+
+// Output:
+// hello
+
+// 3. Async/await syntax
+// function readData(){
+//     const pr=new Promise(function(Resolve,reject){
+//         Resolve("hello")
+//     });
+//     return pr;
+// }
+
+// async function main(){
+//     const promise=await readData();
+//     console.log(promise);
+// }
+// main();
+
+// 4. What all we need to know before we proceed to HTTP?
+// ->Definitely - callbacks
+// ->Good to know - JS Architecture, Promises
+
+// 5 Callback function, Async function
+// 5.1  Callback - how can you pass function as an argument to other function.
+
+// eg-1:
+// function square(n){
+//    return n*n;
+// }
+// function cube(n){
+//     return n*n*n;
+// }
+
+// function sumOfSquares(a,b){
+//     let val1=square(a);
+//     let val2=square(b);
+//     return val1+val2;
+// }
+
+// let res=sumOfSquares(1,9);
+// console.log(res);
+
+// Output:
+// 82
+
+// ->Problem in above code in DRY(don't repeat yourself)
+// ->solution for avoiding DRY.
+// eg-2: make above code generic
+// function square(n){
+//     return n*n;
+//  }
+//  function cube(n){
+//      return n*n*n;
+//  }
+
+//  function sumOfResult(a,b,fn){
+//      let val1=fn(a);
+//      let val2=fn(b);
+//      return val1+val2;
+//  }
+
+//  let SquareRes=sumOfResult(1,2,square);
+//  console.log(SquareRes);  //Output:5
+
+//  let CubeRes=sumOfResult(1,2,cube);
+//  console.log(CubeRes);   //Output:9
+
+
+// 5.2 Async function
+// ->Javascript is synchornous function.
+// ->Javascript thread deoesn't have access to everything immediately.
+// ->there are some tasks it needs to wait for
+// eg:
+// 1. Reading a file
+// 2. Sending a network request
+// 3. A delibrated timer
+// ->if you don't want your javascript thread to be busy then use asynchronous function.
+
+
+// eg-1:
+
+// console.log("hi");
+// function onDone(){
+//     console.log("hi there");
+// }
+
+// setTimeout(onDone,1000);
+// console.log("after setTimeout");
+
+// Output:
+// after setTimeout
+// hi there
+
+// eg-2:
+// ->js executes or loging the value of "a" and "ans" on the console after that it waits the readFile() function to executed.
+// ->once it recieves the data it prints the data in text file.
+// ->Telling other thread to do some work and main thread continues to do presnet work is known as asynchronous.
+// ->setTimeout function is given by browser to js to used it.
+// ->once the setTimeout() function get executed then it is pushed to callback queue.
+// ->event loop takes the takes setTimeout() execution context form callback queue and when call stack is empty then pushes it to call stack for executing it.
+
+// let a = 1;
+// console.log(a);
+// fs.readFile("text.txt", "utf-8", (err, Data) => {
+//     console.log("data read from the file is");
+//     console.log(data);
+// })
+
+// let ans = 0;
+// for (let i = 0; i < 100; i++) {
+//     ans = ans + i;
+// }
+
+// console.log(ans);
+
+
+// eg-3:
+// ->readFile() function three parameters.
+// ->file which has to be accessed to read.
+// ->encodeing
+// ->function with error and data as a paramenter.
+
+// eg-2:
+// const fs = require("fs");
+// fs.readFile("text.txt", "utf-8", function (err, data) {
+//   console.log(err);
+//   console.log(data);
+// });
+
+// console.log("done");
+
+// Output:
+// Hello World, this is my text file.
+
+
+//=>doubts
+//1. if node.js is single threaded how it is performing synchronous and asynchronous task.
+// ->it tells to web api to do asynchronous task.
+
+// 2. can we nest async function inside another async function?
+// yes we can call async function inside another async function
+
+
+// 5.3 Promises
+// ->promises are introduced in ECMAScript2015.
+// ->Promises are suntactical sugar.
+// ->more readable way to write async function.
+
+// =>can js is witten without them?
+// ->yes by using callbacks it can be written.
+
+// 5.3.1 How to create own asynchronous function?
+// a. Approach-1: Wrapping another asynchronous function
+// ->we can wirte by wrapping aync function given by web api's. under the hood asynchronous functions are used  to create own asynchronous function.
+// eg-1:
+// ->setTimeout() function inside reached web api environement.
+// ->this approach uses a callback.
+// ->using callback function inside callback function it leads to callback hell.
+
+
+
+// function myOwnSetTimeout(fn, duration) {
+//     setTimeout(fn, duration);
+// }
+
+// myOwnSetTimeout(function () {
+//     console.log("hello")
+// }, 5000);
+
+// Output:
+// hello
+
+// eg-2:
+// ->nesting looks ugly in this case.
+// setTimeout(function(){
+//     console.log("hello-1");
+//     setTimeout(function(){
+//         console.log("hello-2");
+//     },2000)
+// },1000);
+
+// ->Promise makes above code
+
+//=>async await
+// waitFor(1000);
+// console.log("hello-1");
+// waitFor(2000);
+// console.log("hello-2");
+
+
+// b. Approach-2 :Using Promises
+//->good to know how to create asynchronus function
+// that use promises and call asynchronous functions that return promises.
+// ->callback lead to unnecessary indentation this called callback hell.
+// eg-1:above code using promises
+// function myOwnSetTimeout(duration) {
+//     let p = new Promise(function (resolve) {
+//         setTimeout(resolve, duration);
+//     })
+
+//     return p;
+// }
+
+// myOwnSetTimeout(5000).then(function () {
+//     console.log("hello");
+// })
+
+// Output:
+// hello
+
+
+//5.3.2 How would you defined async function that used promise?
+// non Promiesified vs Promiesified
+// eg-1: non Promiesified
+// ->it does not return  anything but it takes call back as an input.
+// ->caller is the way to tell something has to be done.
+// ->whenever it is done please call it.
+
+// function myOwnSetTimeout(callback,duration){
+//     setTimeout(callback,duration);
+// }
+// myOwnSetTimeout(function(){
+//     console.log("hello")
+// },1000);
+
+// Output:hello
+
+// eg-2:Promisified function
+// ->Promise is just another class in Javascript.
+// ->promise object accepts function as an argument.
+// ->function accepts resolve and reject as an argument.
+// ->it returns promise.
+// ->it does not take callback as an input.
+// ->the promise it returns is the way how the eventualy get the callback.
+// ->tell me what you want me to do after thing is done.
+// ->after time is donw then run the function.
+
+// eg-1:
+// function myOwnSetTimeout(duration) {
+//     // intializing promise
+//     const p = new Promise(function (resolve, reject) {
+//              setTimeout(function(){
+//                 resolve();
+//              },duration);
+//     });
+//     return p;
+// }
+
+// // promise
+// const ans=myOwnSetTimeout(5000);
+// console.log(ans);
+// ans.then(function(){
+//     console.log("Timeout is done");
+// })
+
+// Output:
+// Promise {<pending>}
+// [[Prototype]]: Promise
+// [[PromiseState]]: "fulfilled"
+// [[PromiseResult]]: undefined
+// Timeout is done
+
+// Conclusion
+// 1. async await syntax and Promise chaining syntax get rid of callback hell.
+// 2.These are the only 4 cases where asynchronous call are required
+// 1. doing network call
+// 2.sleep/wait for some time.
+// 3. read a file
+// 4. database call
+
+// ->95% of the time synchronous code is used in JS.
+// ->5% of the time asynchornous code is used -> In this cases they can be done using callbacks instead of promises.
+// 3. When there is error promisfied function will not call then but it calls catch.
+
+// 4. There three states of promise
+// 1. pending
+// 2. resolved
+// 3. rejected
+
+// 5. When task is delegated to web api's c++ code on different therad and mainting the clock in case of setTimeout function. browser are coded using c++ wile js thread executed the present code.
+// ->os works while reading file.
+// ->we cannot read files in browsersd due to security implication.
+// ->JS in the browser will not allow to read files.
+// ->JS in the node.js allows to read the files.
+
+// 6. (.catch)- is a method that is used to handle errors in promises.
+// ->it is used to handle errors
+
+
+// doubts Q/A
+// 1. Promise chaining example
+// function promisifiedTimeout(duration){
+//     const p=new Promise(function(resolve){
+//         setTimeout(resolve,duration);
+//     })
+//     return p;
+// }
+
+
+// promisifiedTimeout(1000).then(function(){
+//     console.log("First is done");
+//     return promisifiedTimeout(2000);
+// }).then(function(){
+//     console.log("second one is done")
+// });
+
+// Output:
+// First is done
+// second one is done
+
+// ->Javascript is single threaded language but it can deligate tasks to other thread and it continues it's work.
+
+// 2. Defining promise?
+// function fn(resolve){
+//    let a=0;
+//    for(let i=1;i<=10;i++){
+//      a=a+i;
+//    }
+//    resolve(a);
+// }
+// const p=new Promise(fn);
+// p.then(function(){
+//     console.log(p);
+// })
+
+// Output:
+// Promise {<fulfilled>: 55}
+// [[Prototype]]: Promise
+// [[PromiseState]]: "fulfilled"
+// [[PromiseResult]]: 55
+
+// 3.getting promises into array
+// function getPromises(){
+//     let p1=new Promises();
+//     let p2=new Promises();
+//     return [p1,p2];
+// }
+
+// const x=getPromises();
+// x[0].then();
+// x[1].then();
+
+// 4. Where resolve is defined?
+// ->it is not defined but it is passed in.
+
+// eg-1:
+// function sumOfSquare(a, cb) {
+//     cb(a * a);
+// }
+
+// sumOfSquare(2, function (result) {
+//     console.log(result);
+// })
+
+// Output:
+// 4
+
+// whoever calls function  gives it.
+
+// 5. Promise is class. which has constructor which accepts the function as argument.at some point given function is called.
+
+// setTimeout(function(){
+//     console.log("Hi there")
+// },1000);
+
+// setTimeout(1000).then(function(){
+//     console.log("Hello")
+// })
+
+
+// eg-1:
+
+// console.log("Before Promise")
+// function promisfiedTimeOut(){
+//     return new Promise(function(resolve){
+//         console.log("Inside callback");
+//         setTimeout(function(){
+//             resolve("Timer")
+//         },5000);
+//     });
+// }
+
+// console.log("After Promise")
+// promisfiedTimeOut().then(function(value){
+//     console.log("inside promisified function")
+//     console.log(value);
+// })
+
+// Output:
+// Before Promise
+// After Promise
+// Inside callback
+// inside promisified function
+// Timer
+
+// ->main JavaScript thread run developer code.
+
+
+
+
+
+const sum = (a, b) => {
+    return a + b;
+}
+console.log(sum(1, 2));
+
+// Output:3
