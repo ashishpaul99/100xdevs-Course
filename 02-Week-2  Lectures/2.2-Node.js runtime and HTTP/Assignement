@@ -1,0 +1,4 @@
+1. create an HTTP server from scratch in C/C++
+2.create todo app that stores todos on the server.
+3. try to create http server from scratch in c or (java)springboot. 
+4. node.js will be better than java until multithreading is introduced.
