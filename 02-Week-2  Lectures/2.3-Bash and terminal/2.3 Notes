@@ -1,0 +1,319 @@
+Week 2.3 | Bash and terminal    Date:29/02/2024  Time:4:05
+->Open a terminal in machine.
+->Install WSL - it gives access to linux terminal in windows machine.
+
+1 Terminal
+-> A terminal is another interface to do things on machine.
+->things we do in machine are opening folders, files, rename files, changing contents of file etc.
+->normally these things are done by using GUI(Graphical User Interface).
+->these things are done by opening file explorer.
+->As a developer we spend most of the time in terminal. these things are done in terminal.
+->the terminal will be always in certain folder like file explorer present in some folder.
+->files can be navigate quickly by using terminal.
+->Terminal is enough to navigate file system and also to create files and folders.
+->Terminal is nothing but another interface to do things on your machine.
+
+
+
+2. Bash Commands
+1. pwd - print working directory
+->it prints working directory.
+->To know on which folder we are in using pwd command.
+->Inside and outside folders can be navigate.
+
+
+eg-1:prints working directory 
+
+     /mnt/c/Users/Ashishpaul# pwd
+     /mnt/c/Users/Ashishpaul
+
+2. cd - change directory
+->change directory command is used to change directory.
+->this command used to navigate file system.
+
+=>2.1 going to Desktop (Ashishpaul folder---> Destop folder)
+eg-1: cd Desktop
+->it gives access to Desktop folder.
+
+      /mnt/c/Users/Ashishpaul# cd Desktop
+      /mnt/c/Users/Ashishpaul/Desktop#
+
+->Checking present working directory 
+      /mnt/c/Users/Ashishpaul/Desktop# pwd
+      /mnt/c/Users/Ashishpaul/Desktop
+
+
+=>2.2 going to folder before the current folder
+-> (Desktop folder ---> Ashishpaul folder) 
+-> Command -> cd .. 
+-> Space between cd and ..
+
+eg-1: 
+      
+      /mnt/c/Users/Ashishpaul/Desktop# cd ..
+      /mnt/c/Users/Ashishpaul# pwd
+      /mnt/c/Users/Ashishpaul
+
+2.3 going into multiple folders at same time
+Ashishpaul folder ---> Desktop folder --> 100xdevs folder
+Command -> cd Desktop/100xdevs
+
+eg-1:
+
+       /mnt/c/Users/Ashishpaul# cd Desktop/100xdevs
+       /mnt/c/Users/Ashishpaul/Desktop/100xdevs#
+
+2.4 going back to the root folder or folder which before current folder and before current folder.
+100devs ---> Desktop --> Ashishpaul folder
+Command -> cd ../..
+
+eg-1: 
+
+     /mnt/c/Users/Ashishpaul/Desktop/100xdevs# cd ../..
+     /mnt/c/Users/Ashishpaul#
+
+
+
+
+3. ls - List the contents of the current directory.
+->it used to list all the files in current folder.
+
+eg-1: list all files in videos folder
+  ->/mnt/c/Users/Ashishpaul# cd Videos
+  ->/mnt/c/Users/Ashishpaul/Videos# ls
+    '2023-07-17 18-37-23.mp4'  '2023-12-03 00-10-35.mp4'        'Screenshot 2023-12-12 15-56-59.png'
+    '2023-07-17 20-09-29.mp4'  '2023-12-12 15-59-04.mp4'        'TS SET-2023GB.pdf'
+    '2023-07-17 21-17-48.mp4'  '2023-12-12 16-00-12.mp4'        'Videos - Shortcut.lnk'
+    '2023-07-17 22-13-11.mp4'  '2023-12-12 16-01-26.      mp4'   desktop.ini
+    '2023-07-17 22-13-42.mp4'         CacheClip                  rm.mov
+    '2023-08-29 23-47-25.mp4'         Captures                   rm1.mov
+    '2023-12-03 00-09-46.mp4'  'Day-2 Morning.mov'
+
+4. mkdir - The mkdir command is used to create a new directory.
+
+->it is used to create new folder.
+
+eg-1: Making javascript folder in Desktop folder
+-> Desktop folder ---> javascript folder
+-> command -> mkdir javascript
+
+     /mnt/c/Users/Ashishpaul/Desktop# mkdir javascript
+     /mnt/c/Users/Ashishpaul/Desktop#
+
+eg-2: Making video1 and video2 folders in Video folder
+
+      /mnt/c/Users/Ashishpaul# cd Video
+      /mnt/c/Users/Ashishpaul/Video# mkdir video1
+      /mnt/c/Users/Ashishpaul/Video# mkdir video2
+
+->Terminal is enough to navigate file system and also to create files and folders.
+
+5. touch 
+->The touch command is a Unix and Linux command used to create an empty file or update the timestamp of an existing file.
+->it is used to create empt file.
+Command-> touch filename
+
+eg-1: creating file in video1 folder
+/mnt/c/Users/Ashishpaul/Video/video1# touch intro
+/mnt/c/Users/Ashishpaul/Video/video1# ls
+intro
+
+eg-2: creating text file in video1 folder
+video1 ---> text.txt file
+
+/mnt/c/Users/Ashishpaul/Video/video1# touch test.txt
+/mnt/c/Users/Ashishpaul/Video/video1# ls
+intro  test.txt
+
+6. cat 
+->it prints the content of the file.
+
+eg-1: create test.txt file with content in Video folder 
+
+->creating text.txt file in Video folder
+      /mnt/c/Users/Ashishpaul/Video# touch test.txt
+
+->printing content of test.txt file
+      /mnt/c/Users/Ashishpaul/Video# cat test.txt
+      Learning bash Commands
+
+eg-2: Ashishpaul -->Video --> text.txt file
+->printing content of text.txt file from Ashish folder
+->Command-> cat Video/test.txt
+
+/mnt/c/Users/Ashishpaul# cat Video/test.txt
+Learning bash Commands
+/mnt/c/Users/Ashishpaul#
+
+7. vi 
+->$ vi <filename> — Open or edit a file.
+->it lets you to open file or edit a file.
+->i - Switch to Insert mode.
+->edit file.
+->In order to save esc+:wq!
+->press esc to come out of insert mode.
+->type :q!
+
+8. mv
+->The mv command in Unix and Linux is used to move or rename files and directories.
+
+Ashishpaul 
+->test1.js
+->javascript folder
+
+eg-1:
+->Moving test1.js file from javascript folder.
+command: mv test1.js javascript
+
+    /mnt/c/Users/Ashishpaul/Desktop# mv test1.js javascript
+
+->Check wheather folder is moved to javascript
+      /mnt/c/Users/Ashishpaul/Desktop# cd javascript
+      /mnt/c/Users/Ashishpaul/Desktop/javascript# ls
+      1  C++  js1.js  js2.js  test.txt  test1.js
+
+ eg-2: Moving into multiple folders
+
+js1 
+->jsall
+ ->js2
+
+->moving js2 into js1 and from js1 to jsall
+command js2 js1/jsall/
+
+/mnt/c/Users/Ashishpaul/Desktop# mv js2 js1/jsall
+/mnt/c/Users/Ashishpaul/Desktop# cd js1/jsall
+/mnt/c/Users/Ashishpaul/Desktop/js1/jsall# ls
+js2
+
+eg-3:   Desktop <---- javscript
+                       ->C++
+->move C++ file from javscript folder to Desktop
+
+/mnt/c/Users/Ashishpaul/Desktop# cd javascript
+/mnt/c/Users/Ashishpaul/Desktop/javascript# mv C++ ../
+
+
+9. cp
+->The cp command in Unix and Linux is used to copy files and directories.
+syntax: cp [options] source destination
+
+9.1 Copying one folder or file into other folder
+
+eg-1: copying jscode.js file in javascript folder
+
+->creating jscode.js file in Desktop
+
+   /mnt/c/Users/Ashishpaul/Desktop# touch jscode.js
+
+->copying jscode.js file in javascript folder
+
+    /mnt/c/Users/Ashishpaul/Desktop# cp jscode.js javascript
+
+->moving into javscript folder
+
+     /mnt/c/Users/Ashishpaul/Desktop# cd javascript
+
+->listing things in javascript folder
+      /mnt/c/Users/Ashishpaul/Desktop/javascript# ls
+      1  Destop  js1.js  jscode.js  test.js  test1.js
+
+9.2 Copying one folder into other folder. 
+->Copying few things recursively.
+->cp expect -r in command while copying folders in other folder.
+-> flag -r stands for recursive.
+
+eg-2: 
+
+->copying test2 in test1
+test2 ----> test1 
+
+=>In terminal 
+/mnt/c/Users/Ashishpaul/Desktop# cp test2 javascript
+cp: -r not specified; omitting directory 'test2'
+
+/mnt/c/Users/Ashishpaul/Desktop# cp -r test2 javascript
+
+/mnt/c/Users/Ashishpaul/Desktop# cd javascript
+/mnt/c/Users/Ashishpaul/Desktop/javascript# ls
+test2
+
+=>node commands
+10. nvm - node version manager
+->It lets to install node in machine.
+->The nvm (Node Version Manager) command is used for managing multiple versions of Node.js on a single machine. It allows you to easily switch between different versions of Node.js for different projects. Here are some basic nvm commands:
+
+eg-1:
+Install a specific version of Node.js
+Command:  nvm install <version>
+
+11. node command
+->The node command is used to execute JavaScript code in a Node.js environment.
+->it like shell where we can write js code.
+->this is another way to test or run js code locally.
+->To exit from node shell->press Ctrl+C again or Ctrl+D or type .exit.
+
+
+syntax: node filename.js
+
+eg-1:
+C:\Users\Ashishpaul>node
+> console.log("Hello terminal")
+Hello terminal
+
+12. clear 
+->it clears terminal.
+
+13. npm - node package manager
+=>npm command and installing libraries using it.
+->libraries - 
+->express - external dependency.
+->npm - where developer publish code or libraries.
+->which are used for developement.
+->In order to install dependecy use npm command.
+syntax: npm install dependecyName
+
+eg-1: installing express
+npm install express
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
