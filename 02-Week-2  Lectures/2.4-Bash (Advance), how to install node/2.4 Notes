@@ -1,0 +1,995 @@
+Week 2.4 | Bash (Advance), how to install node Date: 01/03/24   Time: 3:49 PM
+
+->Bash commands 
+->Commands which helps to navigate  OS better, work with files, move directories and do bunch different things to command line interface.
+
+1. Bash 
+-> it is command line interpreter language that let's you interact with Operating system.
+
+2. Command line interface or shell
+->the job of command line interface is to understand the prompt given and it is executed by the kernel.
+
+->terminal
+->instruction is given for Operating system to execute.
+
+3. Bash Commands 
+1. pwd - print working directory
+->Display the current working directory with this command.
+
+eg-1:
+    /mnt/c/Users/Ashishpaul# pwd
+    /mnt/c/Users/Ashishpaul
+
+2. ls - list files
+->it displays a list of files, directories and sub directories in the current directory.
+->it lists out file and directories in present directory. 
+
+2.1 listing files in code1 folder
+Command -> ls
+eg-1: 
+
+    /mnt/c/Users/Ashishpaul/Desktop/code1# ls
+    code.js  code2  test.js  testBash
+
+2.2 looking details of the files 
+Command -> ls -l
+eg-2:  
+
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls -l
+total 0
+-rwxrwxrwx 1 root root   0 Mar  1 16:18 code.js
+drwxrwxrwx 1 root root 512 Mar  1 12:07 code2
+-rwxrwxrwx 1 root root   0 Mar  1 16:18 test.js
+drwxrwxrwx 1 root root 512 Mar  1 16:18 testBash
+
+1 column is permisions details -> they are preceded by d.
+2 column is number of references of the directories.
+3 column is owner of the directories.
+4 column is group owner of the directories.
+5 column is size in bytes.
+6 column is last modified date and timestamp.
+7 column is directory names.
+
+2.3 Looking sub directories
+Command-> ls -R
+
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls -R
+.:
+code.js  code2  test.js  testBash
+
+./code2:
+'code 1.1'  'code 1.2'
+
+'./code2/code 1.1':
+'./code2/code 1.2':
+
+2.4 Check when it is last modified first
+Command: ls -t
+
+eg-1:
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls -t
+code2  test.js  code.js  testBash
+
+2.5 Check when it is last modified first timestamp
+Command: ls -lt
+->oldest files at last and newest one are at top.
+
+eg-1:
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls -lt
+total 0
+drwxrwxrwx 1 root root 512 Mar  1 18:01 code2
+-rwxrwxrwx 1 root root   0 Mar  1 16:18 test.js
+-rwxrwxrwx 1 root root   0 Mar  1 16:18 code.js
+drwxrwxrwx 1 root root 512 Mar  1 16:18 testBash
+
+
+2.6 In order to access hidden files
+Command: ls -la filename
+->files starting with are dot essentially are hidden files.
+
+eg-1:
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls -la code2
+total 0
+drwxrwxrwx 1 root root 512 Mar  1 18:01  .
+drwxrwxrwx 1 root root 512 Mar  1 16:34  ..
+drwxrwxrwx 1 root root 512 Mar  1 18:01 'code 1.1'
+drwxrwxrwx 1 root root 512 Mar  1 18:01 'code 1.2'
+
+2.7 look into hidden files which are in sub directory
+Command: ls -lR 
+
+eg-1:
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls -lR code2
+code2:
+total 0
+drwxrwxrwx 1 root root 512 Mar  1 18:01 'code 1.1'
+drwxrwxrwx 1 root root 512 Mar  1 18:01 'code 1.2'
+
+'code2/code 1.1':
+total 0
+
+'code2/code 1.2':
+
+2.8 To see files in reverse order of modifed or increasing order of time
+Command: ls -lr
+
+eg-1:
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls -lr
+total 0
+drwxrwxrwx 1 root root 512 Mar  1 16:18 testBash
+-rwxrwxrwx 1 root root   0 Mar  1 16:18 test.js
+drwxrwxrwx 1 root root 512 Mar  1 18:01 code2
+-rwxrwxrwx 1 root root   0 Mar  1 16:18 code.js
+
+=>2.9 Listing files and directories with their size
+Command: ls -s
+
+eg-1:
+
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls -s
+total 12
+ 0 code.js   0 code2  12 strings.js   0 test.js   0 testBash
+
+
+=>2.10 filtering files what we needed
+->accessing folders with sepecific extension
+command: ls -lR | grep .extensionName
+
+ eg-1: listing all js files
+ ->it is gives all js files present in code1 folder.
+
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls -lR | grep .js
+-rwxrwxrwx 1 root root   204 Mar  1 18:28 code.js
+-rwxrwxrwx 1 root root 11194 Jan  8 14:10 strings.js
+-rwxrwxrwx 1 root root   134 Mar  1 18:28 test.js
+
+=>2.11 searching files with their starting letters of names
+-> We can use wild card to search particular directory
+
+command: ls startingLetters
+
+eg-1: searching files with contains "te" in therir name
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls te*
+test.js
+
+testBash:
+
+eg-2:searching files which contains "zo" in their name
+root@DESKTOP-12AGMBF:/mnt/c/Users/Ashishpaul/Desktop/code1# ls zo*
+'zoom meeting1':
+
+'zoom meeting2':
+
+'zoom meeting3':
+
+=>2.12 list all the files and directories of previous folder
+Command: ls..
+
+eg-1:
+   /mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls ..
+   code.js   code2   strings.js   test.js   testBash  'zoom meeting1'  'zoom meeting2'  'zoom meeting3'
+
+How to go to each folder and do bunch of things?
+3. cd ->change directory
+->to navigate to different folders or directories on your computer.
+command: cd fileName
+
+3.1 going from one directory to other directory
+eg-1: going from code1 folder to code2 folder
+
+    /mnt/c/Users/Ashishpaul/Desktop/code1# cd code2
+    /mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls
+    'code 1.1'  'code 1.2'
+
+
+3.2 going to previous directory
+Command: cd ..
+->Desktop <-----code1<-----code2
+eg-1:  
+    /mnt/c/Users/Ashishpaul/Desktop/code1/code2# cd ..
+    /mnt/c/Users/Ashishpaul/Desktop/code1# cd ..
+    /mnt/c/Users/Ashishpaul/Desktop#
+
+3.3 In order go to hop multiple previous directory use directory slash
+Command:cd ../..
+->directly go from code2 to Desktop
+Desktop <------- code2
+          code1
+eg-1:   
+
+ /mnt/c/Users/Ashishpaul/Desktop/code1/code2# cd ../..
+ /mnt/c/Users/Ashishpaul/Desktop# pwd
+ /mnt/c/Users/Ashishpaul/Desktop
+
+->to view files and adding buch if files to directory
+4. touch - create a new file
+->command to create a new file.
+command-> touch fileName
+
+eg-1: creating new file in code1 folder
+
+/mnt/c/Users/Ashishpaul/Desktop/code1# touch newFile.txt
+/mnt/c/Users/Ashishpaul/Desktop/code1# ls
+ code.js   newFile       strings.js   testBash        'zoom meeting2'
+ code2     newFile.txt   test.js     'zoom meeting1'  'zoom meeting3'
+
+
+5. cat - concatenate
+->command to display the contents of a file.
+->cat command also used to concatenate data to existing file.
+
+5.1 Adding data to file
+command: cat > fileName
+
+eg-1: adding data to newFile.txt which is in code1 folder
+->ctrl+D is used to come out of file after adding data
+
+    /mnt/c/Users/Ashishpaul/Desktop/code1# cat > newFile.txt
+    I am learning bash commands. I want to become full stack developer.
+    :/mnt/c/Users/Ashishpaul/Desktop/code1# cat newFile.txt
+    I am learning bash commands. I want to become full stack developer.
+
+
+5.2 Append few more things to the file
+command: cat >> newFile.txt
+->it appenda data at the end of the file.
+
+eg-1:
+->appending data to file
+      /mnt/c/Users/Ashishpaul/Desktop/code1# cat >> newFile.txt
+      I want to crack top product based company
+      like faang
+
+->seeing content of file
+      /mnt/c/Users/Ashishpaul/Desktop/code1# cat newFile.txt
+      I am learning bash commands. I want to become full stack developer.
+      I want to crack top product based company
+      like faang
+
+
+
+6. mkdir- Make Directory
+->command to create a new directory.
+->creating new directory within directory
+Command: mkdir directoryName
+
+eg-1:creating frontend and backend directory in code1 folder
+
+    /mnt/c/Users/Ashishpaul/Desktop/code1/code2# mkdir frontend
+    /mnt/c/Users/Ashishpaul/Desktop/code1/code2# mkdir backend
+    /mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls
+    backend  'code 1.1'  'code 1.2'   frontend
+
+6.1 Combining all commands together
+->creating directory and navigating to same directory.
+Command : mkdir fileName && cd fileName
+
+eg-1: creating database folder in code2 folder and navigate to database folder simultaineously
+
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# mkdir database && cd database
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2/database# pwd
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2/database
+
+6.2 recursively create a directory.
+
+eg-1:
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# mkdir -p frontend
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# mkdir -p frontend/scripts
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# mkdir -p frontend/css
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# mkdir -p frontend/html
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls -l frontend
+
+total 0
+drwxrwxrwx 1 root root 512 Mar  1 20:19 css
+drwxrwxrwx 1 root root 512 Mar  1 20:19 html
+drwxrwxrwx 1 root root 512 Mar  1 20:18 scripts
+
+
+->how to move files from one place to other
+7. Renaming a file 
+command: mv oldFileName rename
+
+eg-1: renaming mycode.js ro code.js
+root@DESKTOP-12AGMBF:/mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls
+ backend  'code 1.1'  'code 1.2'   frontend   mycode.js   sql
+
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# mv mycode.js code.js
+
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls
+ backend  'code 1.1'  'code 1.2'   code.js   frontend   sql
+
+ 8. Moving file from one directory to other directory
+Command: mv movingFileName  destinationDirectory
+
+ eg-1:moving test.js file from code1 file to backend folder which is in code2
+
+ ->files in code1 
+ /mnt/c/Users/Ashishpaul/Desktop/code1# ls
+ test.js   
+
+->moving test.js file to code2/backend folder
+/mnt/c/Users/Ashishpaul/Desktop/code1# mv test.js code2/backend
+
+->going to code2/backend folder
+/mnt/c/Users/Ashishpaul/Desktop/code1# cd code2/backend
+
+->listing all file in code2/backend folder
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2/backend# ls
+test.js
+
+9. cp - Copy command
+Command: cp copyFileName destinationDirectory
+
+9.1  Copy a file:
+Command: cp copyFileName destinationDirectory
+
+eg-1: Copying code.js file from code1 folder to code2 folder
+
+->copying code.js code2
+/mnt/c/Users/Ashishpaul/Desktop/code1# cp code.js code2
+
+
+9.2 Copy a directory and its contents recursively
+Command: cp -r source_directory/ destination_folder/
+
+ eg-1: 
+ code1-> frontend -> database ---->    code1->backend->database
+
+->copying database folder from frontend folder in code1 to backend folder in code1
+->picking database folder from frontend and copying it in backend folder.
+
+->Copy a directory and its contents recursively:
+/mnt/c/Users/Ashishpaul/Desktop/code1# cp -r frontend/database backend
+
+10. rm -
+Command: rm fileName
+->this command is used to remove or delete files and directories.
+
+10.1 Removing file from directory
+command: rm fileName 
+
+eg-1: removing database file from frontend folder.
+
+/mnt/c/Users/Ashishpaul/Desktop/code1/frontend# rm database
+
+
+10.2 If you want to remove a directory and its contents recursively, you can use the -r option:
+Command: rm -r directoryName
+
+eg-1: removing frontend folder and its contents recursively from code1 folder
+
+frontend -> file, framework, frontend.txt
+
+root@DESKTOP-12AGMBF:/mnt/c/Users/Ashishpaul/Desktop/code1# rm -r frontend
+
+
+11. Change file permissions
+->Modify the read, write and execute permissions of a file.
+Command: chmod ugo-rwx fileName/folderName
+1. Who are you setting the permision user, others , group.
+2. Are you adding few permissions or revoking permissions.
+3. Then specify folder or file for which you are doing for.
+->if it is folder use command: chmod -R ugo-rwx
+
+11.1 Adding permissions
+eg-1: adding write permision for code.js file
+
+->Before changing permission
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls -l
+-r-xr-xr-x 1 root root 204 Mar  5 21:58  code.js
+
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# chmod g+w code.js
+
+
+->after changing persmission
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls -l
+-rwxrwxrwx 1 root root 204 Mar  5 21:58  code.js
+
+
+
+11.2 Revoking permissions
+eg-2: chmod u-x fileName
+
+11.3 Using numbers to add or revoke persmisions
+4 -> to read
+2 -> to write
+1 -> to execute
+
+eg-1: 
+giving only read permision to Users
+giving only read permision to group
+giving only write permision to group
+
+
+->chmod ugo fileName -> chmod 664 fileName
+
+->no change for user so 6(write + read)
+->no change for group so 6(write+read)
+->other can only read so 4 (read)
+
+eg-2: give all the persmisions for files
+command: chmod 777 fileName
+
+
+
+
+=> listing files and directories in a long format.
+
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls -l
+total 0
+drwxrwxrwx 1 root root 512 Mar  4 12:11  backend
+drwxrwxrwx 1 root root 512 Mar  1 18:01 'code 1.1'
+drwxrwxrwx 1 root root 512 Mar  1 18:01 'code 1.2'
+-rwxrwxrwx 1 root root 204 Mar  5 21:58  code.js
+drwxrwxrwx 1 root root 512 Mar  4 11:55  frontend
+drwxrwxrwx 1 root root 512 Mar  1 20:09  sql
+
+column-1 talks about permissions.
+->there are three types of permisions
+1. read      - r
+2. write     - w
+3. execution - x
+
+column-3 talks about user permisions
+column-4 talks about group permisions
+
+12. Display message in terminal
+Command: echo [OPTION] [STRING]
+
+
+12.1 Displaying a simple text:
+eg-1:echo "Hello, World!"
+
+
+12.2: Displaying the content of a variable:
+eg-1: 
+my_variable="Linux"
+echo "This is $my_variable"
+
+12.3 Printing without a newline character:
+eg-1:
+echo -n "This is on the same line"
+
+12.4 Displaying multiple arguments:
+eg-1:
+echo "Welcome" "to" "Linux"
+
+12.5 Escaping characters:
+eg-1: 
+echo "This is a line with a new\nline character."
+
+13. head 
+->The head command in Linux is used to display the beginning (head) of a file. By default, it prints the first 10 lines of a file to the terminal. 
+
+Command: head [OPTION]... [FILE]...
+
+13.1 Display the first 10 lines of a file
+Command: head filename
+
+eg-1: displaying first 10 lines of newFile.text
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# head newFile.txt
+one
+two
+3
+4
+5
+65
+7
+8
+9
+10
+
+12.2 Display a specific number of lines (e.g., first 5 lines):
+command:head -n 5 filename
+
+eg-1 Display top 20 lines of file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# tail -20 newFile.txt
+two
+3
+4
+5
+65
+7
+8
+9
+10
+11
+12
+13
+1
+14
+15
+16
+17
+18
+19
+20
+
+12.3 Display multiple files:
+command:head file1 file2
+
+
+12.4 Pipe operator
+->view certain section of the file by using head and tail command.
+->displaying line no 15-20
+->Pipe operator or character is used.
+->output comes from one cammand flows to other command.
+-> command1 | command2
+
+eg-1:displaying numbers from 15 to 19 out of 1 to 10 numbers which are in file.
+root@DESKTOP-12AGMBF:/mnt/c/Users/Ashishpaul/Desktop/code1/code2# tail -n +15 newFile.txt | head -n 5
+15
+16
+17
+18
+19
+
+
+
+
+
+14. tail
+->The tail command in Linux is used to display the last part (tail) of a file. It is the counterpart to the head command. By default, tail prints the last 10 lines of a file to the terminal.
+
+command: tail [OPTION]... [FILE]...
+
+OPTION: Optional parameters that modify the behavior of the tail command.
+FILE: The name of the file(s) whose end you want to display.
+
+14.1 Display the last 10 lines of a file:
+command: tail filename
+
+eg-1:printing last 10 items in newFile.txt  file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# tail newFile.txt
+12
+13
+1
+14
+15
+16
+17
+18
+19
+20
+
+15 Wc - wc (word count) command
+The wc (word count) command in Linux is used to count the number of lines, words, and bytes in a file or input provided through a pipeline.
+
+syntax: wc [OPTION]... [FILE]...
+
+15.1 Count the number of lines, words, and bytes in a file:
+command: wc filename
+
+output: noOfLines noOfWords noOfBytes filename
+
+eg-1:
+->Content in file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# cat newFile.txt
+one
+two
+three
+
+->stats of the content
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# wc newFile.txt
+ 3  3 15 newFile.txt
+
+ 16. grep 
+->it is used to find certain occurances and patterns.  
+ ->The grep command in Linux is a powerful utility used for searching and matching patterns within text files. It allows you to filter lines in a file or command output based on a specified pattern.
+
+ Syntax: grep [OPTIONS] PATTERN [FILE...]
+
+OPTIONS: Optional parameters that modify the behavior of the grep command.
+PATTERN: The search pattern or regular expression to match.
+FILE: The name of the file(s) in which to search. If no file is specified, grep reads from the standard input (stdin).
+
+16.1 finding occurance of a word in file
+Command: grep thingToSearch fileName
+
+eg-1:finding occurrance of one in file
+->displaying content of the file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# cat newFile.txt
+one
+two
+three
+twenty one
+thirty one
+
+->finding occurrance of "one" in file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep "one" newFile.txt
+one
+twenty one
+thirty one
+
+16.2: count number of line which contains "one"
+command: grep -c thingToSearch fileName
+
+eg-1: count number of line which contains "one"
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -c "one" newFile.txt
+3
+
+16.3 see the occurance of the particulat word in file
+command: grep -h thingToSearch fileName
+
+eg-1: see occurrance of "one" in file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -h "one" newFile.txt
+one
+twenty one
+thirty one
+
+16.4 case-insensitive search 
+->The -i option, on the other hand, performs a case-insensitive search. 
+->Command:grep -h thingToSearch fileName
+
+eg-1:
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -h "one" newFile.txt
+one
+twenty one
+thirty oneOne
+
+->case-insensitive search of "one"
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -hi "one" newFile.txt
+one
+twenty one
+thirty oneOne
+oNe
+onE
+ONE
+ONe
+OnE
+
+
+16.4   Suppresses the display of filenames, case-insensitive search, recursive search in directories and subdirectories.
+Command: grep -hir "pattern" directory/
+
+eg-1: recursive search of "one" in all directories and sub directories
+
+16.5 Getting line numbers of occurances
+Command: grep -hin thingToSearch filename
+
+eg-1: getting line numbers of occurances of "one"
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -hin "one" newFile.txt
+1:one
+4:twenty one
+5:thirty oneOne
+6:oNe
+7:onE
+8:ONE
+9:ONe
+10:OnE
+
+16.6 Matching the whole word
+command: grep -w thingToSearch filename
+
+eg-1: it matches exact word
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -w "one" newFile.txt
+one
+twenty one
+
+
+16.7 search only match parts
+command:grep -o thingToSearch fileName
+
+eg-1:search only match parts 
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -o "one" newFile.txt
+one
+one
+one
+one
+one
+one
+one
+one
+
+17. history 
+->The history command in Linux is used to display a list of previously executed commands in the current shell session.
+->It allows you to view and recall your command history, making it convenient for re-executing commands or tracking your activity.
+
+syntax: history
+
+
+18.Executing script
+Command: bash scriptFileName
+
+->A file with a .sh extension typically indicates a shell script in Unix-like operating systems, such as Linux.
+
+eg-1:
+
+->content in script file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# cat newscript.sh
+echo "Hello World"
+mkdir directory2
+cd directory2 && touch newscript_file2.txt
+
+
+->executing script 
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# bash newscript.sh
+Hello World
+
+
+->listing contents in directory(we find directory2 is created)
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls
+ backend    'code 1.2'   code.txt      codejs.txt   frontend     newFile.tx    newscript.sh   zoom.txt
+'code 1.1'   code.js     codefast.js   directory2   mycode.txt   newFile.txt   sql            zoom1.txt
+
+
+->listing things which are in directory2
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls directory2
+newscript_file2.txt
+
+
+
+19. grep 
+
+eg-1:
+->displaying content in log.txt
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# cat log.txt
+Timestamp  category  message
+2545456545  info      meassage1
+65564645    info        booting
+545655546   info       critical service
+54543545453 error       requested resource not found
+
+->finding occurance of "info" in file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep "info" log.txt
+2545456545  info      meassage1
+65564645    info        booting
+545655546   info       critical service
+6565+65     info         newinfo
+556656      info         info2
+565453435   info         info3
+
+->displaying content by ommitting particular things from content. it gets details apart from info.
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -v "info" log.txt
+Timestamp  category  message
+54543545453 error       requested resource not founcd
+5867678     error        newerror1
+
+
+eg-3:
+->getting preceding or exceding line after particular thing in file.
+-A -> looks occurances after particular things
+
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -A 5 error log.txt
+54543545453 error       requested resource not founcd
+6565+65     info         newinfo
+5867678     error        newerror1
+556656      info         info2
+565453435   info         info3
+
+eg-4
+->displaying occurance before particulat thing(error)
+-B -> looks occurances before particular thing
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -B 5 error log.txt
+Timestamp  category  message
+2545456545  info      meassage1
+65564645    info        booting
+545655546   info       critical service
+54543545453 error       requested resource not founcd
+6565+65     info         newinfo
+5867678     error        newerror1
+
+eg-5:
+->displaying occurance before and after particulat thing(error)
+-C ->  looks occurances before and afterparticular thing
+root@DESKTOP-12AGMBF:/mnt/c/Users/Ashishpaul/Desktop/code1/code2# grep -C 5 error log.txt
+Timestamp  category  message
+2545456545  info      meassage1
+65564645    info        booting
+545655546   info       critical service
+54543545453 error       requested resource not founcd
+6565+65     info         newinfo
+5867678     error        newerror1
+556656      info         info2
+565453435   info         info3
+
+
+
+19. sed
+->The sed command, which stands for stream editor, is a powerful utility in Unix and Linux systems used for text manipulation.
+->substitution can be done using sed command
+command: sed [OPTIONS] 'command' filename
+
+
+19.1 Substitute (Search and Replace):
+command: sed -i 's/old_pattern/new_pattern/' filename
+
+eg-1:replacing error with critical in log.txt file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# sed 's/error/critical/' log.txt
+Timestamp  category  message
+2545456545  info      meassage1
+65564645    info        booting
+545655546   info       critical service
+54543545453 critical       requested resource not founcd
+6565+65     info         newinfo
+5867678     critical        newerror1
+556656      info         info2
+565453435   info         info3
+
+
+
+
+->before replacing error with critical
+root@DESKTOP-12AGMBF:/mnt/c/Users/Ashishpaul/Desktop/code1/code2# cat log.txt
+Timestamp  category  message
+2545456545  info      meassage1
+65564645    info        booting
+545655546   info       critical service
+54543545453 error       requested resource not founcd
+6565+65     info         newinfo
+5867678     error        newerror1
+556656      info         info2
+565453435   info         info3
+
+19.2 before making any changes we can create backup file for original file
+command: sed -ibackup 's/old_pattern/new_pattern/' log.txt
+
+eg-1: creating backup of original file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# sed -ibackip 's/critical/error/' log.txt
+
+->listing things in folder(backup file is seen)
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# ls
+  log.txtbackip   
+
+19.3 How to make changes to specific set of lines
+->specify line numbers where modification is needed to done
+Command: sed 'lineNumber s/oldPattern/newPattern/' fileName
+
+=>Original content in log.txt file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# cat log.txt
+Timestamp  category  message
+2545456545  info      meassage1
+65564645    info        booting
+545655546   info       error service
+54543545453 error       requested resource not founcd
+6565+65     info         newinfo
+5867678     error        newerror1
+556656      info         info2
+565453435   info         info3
+
+eg-1:"error" at line 5 is replaced with critical
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# sed '5 s/error/critical/' log.txt
+Timestamp  category  message
+2545456545  info      meassage1
+65564645    info        booting
+545655546   info       error service
+54543545453 critical       requested resource not founcd
+6565+65     info         newinfo
+5867678     error        newerror1
+556656      info         info2
+565453435   info         info3
+
+
+
+
+19.3.2 while modifying we can also use range
+eg-2: 
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# sed '6,8 s/error/critical/' log.txt
+Timestamp  category  message
+2545456545  info      meassage1
+65564645    info        booting
+545655546   info       error service
+54543545453 error       requested resource not founcd
+6565+65     info         newinfo
+5867678     critical        newerror1
+556656      info         info2
+565453435   info         info3
+
+
+
+
+
+
+
+
+20.  awk
+->it is scripting language.
+->The awk command is a powerful text processing tool in Unix and Linux systems. 
+->it let's to arithmetic operations, comparisions, calculations, custom fetching a files
+->it has lot of features.
+->The awk command is a powerful text processing tool in Unix and Linux systems. 
+->It is used for pattern scanning and processing, particularly in columns. 
+->awk reads input line by line and allows you to specify patterns and actions to be performed on those lines. 
+->awk is used when dealing with csv files.
+
+command: awk 'pattern { action }' filename
+
+
+20.1 printing the all the occurances of particular thing in file
+command: awk 
+
+eg-1:printing all the occurancesof error
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# awk '/error/{print $0}' log.txt
+
+54543545453 error       requested resource not founcd
+5867678     error        newerror1
+
+20.2 Substituting by using awk command
+
+eg-1: substituting "error" with "critical"
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# awk '{gsub(/error/,"critical")}{print}' log.txt
+Timestamp  category  message
+2545456545  info      meassage1
+65564645    info        booting
+545655546   info       service
+54543545453 critical       requested resource not founcd
+6565+65     info         newinfo
+5867678     critical        newcritical1
+556656      info         info2
+565453435   info         info3
+
+20.3 count number of occurrances
+
+eg-1:counting number of occurances of "info" in file
+/mnt/c/Users/Ashishpaul/Desktop/code1/code2# awk  '{count[$2]++} END {print count["info"]}' log.txt
+6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+
+
+  
+
+
+
+
+

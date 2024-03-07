@@ -1,0 +1,163 @@
+1. pwd - print working directory
+->Display the current working directory with this command.
+
+2. ls - list files
+->it displays a list of files, directories and sub directories in the current directory.
+->it lists out file and directories in present directory. 
+
+2.1 listing files in code1 folder
+Command -> ls
+
+2.2 looking details of the files 
+->The ls -l command is used in Unix and Unix-like operating systems to list files and directories in a long format.
+
+Command -> ls -l
+
+2.3 Looking sub directories
+Command-> ls -R
+
+2.4 Check when it is last modified first
+Command: ls -t
+
+2.5 Check when it is last modified first timestamp
+Command: ls -lt
+
+2.6 In order to access hidden files
+Command: -la filename
+
+2.7 look into hidden files which are in sub directory
+Command: ls -lR 
+
+2.8 To see files in reverse order of modifed or increasing order of time
+Command: ls -lr
+
+2.9 Listing files and directories with their size
+Command: ls -s
+
+2.10 filtering files what we needed
+->accessing folders with sepecific extension
+command: ls -lR | grep .extensionName
+
+2.11 searching files with their starting letters of names
+-> We can use wild card to search particular directory
+command: ls startingLetters
+
+2.12 list all the files and directories of previous folder
+Command: ls..
+
+3. cd ->change directory
+->to navigate to different folders or directories on your computer.
+command: cd fileName
+
+3.1 going from one directory to other directory
+command: cd fileName
+
+3.2 going to previous directory
+Command: cd ..
+
+3.3 In order go to hop multiple previous directory use directory slash
+Command:cd ../..
+
+4. touch - create a new file
+->command to create a new file.
+command-> touch fileName
+
+5. cat - concatenate
+->command to display the contents of a file.
+->cat command also used to concatenate data to existing file.
+
+command: cat filename
+
+5.1 Adding data to file
+command: cat > fileName
+->ctrl+D is used to come out of file after adding data
+
+
+5.2 Append few more things to the file
+command: cat >> newFile.txt
+
+6. mkdir- Make Directory
+->command to create a new directory.
+->creating new directory within directory
+Command: mkdir directoryName
+
+6.1 Combining all commands together
+->creating directory and navigating to same directory.
+Command : mkdir fileName && cd fileName
+
+6.2 recursively create a directory.
+command: mkdir -p fileName/fileName
+
+7. Renaming a file 
+command: mv oldFileName rename
+
+ 8. Moving file from one directory to other directory
+Command: mv movingFileName  destinationDirectory
+
+9. cp - Copy command
+Command: cp source_file.txt destination_file.txt
+
+9.1  Copy a file:
+Command: cp copyFileName destinationDirectory
+
+9.2 Copy a directory and its contents recursively
+Command: cp -r source_directory/ destination_folder/
+
+10. rm -
+Command: rm fileName
+
+10.1 Removing file from directory
+command: rm fileName 
+
+10.2 If you want to remove a directory and its contents recursively, you can use the -r option:
+Command: rm -r directoryName
+
+11. Change file permissions
+->Modify the read, write and execute permissions of a file.
+Command: chmod ugo-rwx fileName/folderName
+
+11.1 Adding permissions
+Command: chmod ugo-rwx fileName/folderName
+
+11.2 Revoking permissions
+Command: chmod ugo-rwx fileName/folderName
+
+
+11.3 Using numbers to add or revoke persmisions
+4 -> to read
+2 -> to write
+1 -> to execute
+
+eg-1: chmod ugo fileName -> chmod 664 fileName
+
+12 Displaying a message in terminal
+Command: echo [OPTION] [STRING]
+
+12.1 Displaying a simple text:
+eg-1:echo "Hello, World!"
+
+12.2: Displaying the content of a variable
+
+eg-1: 
+my_variable="Linux"
+echo "This is $my_variable"
+
+12.3 Printing without a newline character:
+eg-1:
+echo -n "This is on the same line"
+
+12.4 Displaying multiple arguments:
+eg-1:
+echo "Welcome" "to" "Linux"
+
+12.5 Escaping characters:
+eg-1: 
+echo "This is a line with a new\nline character."
+
+
+
+
+
+
+
+
