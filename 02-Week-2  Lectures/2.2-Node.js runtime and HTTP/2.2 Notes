@@ -7,7 +7,8 @@
 // ->every year new features are added.
 
 // 2. Node.js
-// ->Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside of a browser
+// ->Node.js is an open-source, cross-platform JavaScript runtime environment that executes 
+JavaScript code outside of a browser
 
 // 2. What is frontend?
 // ->HTML/CSS/JS is used to code frontend.
@@ -15,7 +16,7 @@
 
 // 3. What is backend?
 // ->Javascript, Rust, Java, go and so on used to code backend.
-// ->A place where request goes is backend server.
+// ->A place where request goes to backend server.
 
 // 4.What is HTTP server?
 // ->The protocol which lets frontend to communicate the backend is HTTP(Hyper Text Transfer Protocol).
@@ -24,7 +25,9 @@
 // ->server responds with the information which asked by client.
 // ->it serves information as webpage in browser.
 // ->web pages are made with html/css/JS.
-// ->remote procedure calls - Remote Procedure Call is a software communication protocol that one program can use to request a service from a program located in another computer on a network without having to understand the network's details.
+// ->remote procedure calls - Remote Procedure Call is a software communication protocol that 
+one program can use to request a service from a program located in another computer on a
+network without having to understand the network's details.
 
 
 //    Client(browser) --------> Server
@@ -59,12 +62,31 @@
 // 4. Header Body query parameters
 // ->header, body and query parametes should needed while sending request.
 
+// a Header
+// ->Some authentication is sent while sending request whle logging in.
+
+// b Body
+// ->sending arguments.
+// ->requesting by sending some arguments.
+
+// eg:
+// asking chat gpt ->what is 2+2(usually in JSON)
+
 // 5. Methods
 // ->Method should be sending while requeting is sending.
+// ->what kind of request you are sending.
+// ->POST ->this method used for Putting data on server
+// ->GET ->this method used for getting data from server.
+
+
+// eg-1:
+// ->Open network tab by inspecting chat gpt website.
+// ->type question you want to ask.
 
 
 // 4.2 What are things Server needs to worry about?
-// ->Whenever server recives a request it serves the information to the client with some Response headers, Reponse body, and Status codes.
+// ->Whenever server recives a request it serves the information to the client with some 
+Response headers, Reponse body, and Status codes.
 
 //                    HTTP(Server Side)
 //          __________________|_________________
@@ -92,25 +114,7 @@
 // ->Whatever is visible after website returns.
 // ->route specifies what exactly we are doing.
 
-// 2. Header
-// ->Some authentication is sent while sending request whle logging in.
 
-// 3.Body
-// ->sending arguments.
-// ->requesting by sending some arguments.
-
-// eg:
-// asking chat gpt ->what is 2+2(usually in JSON)
-
-// 3. Method
-// ->what kind of request you are sending.
-// ->POST ->this method used for Putting data on server
-// ->GET ->this method used for getting data from server.
-
-
-// eg-1:
-// ->Open network tab by inspecting chat gpt website.
-// ->type question you want to ask.
 
 // =>Header Tab
 // Request URL: https://chat.openai.com/backend-api/conversation
@@ -127,8 +131,15 @@
 
 
 // 4.4 Deep dive into HTTP Protocol(Server side)
+
+//                    HTTP(Server Side)
+//          __________________|_________________
+//         |                  |                |
+//  Reponse headers    Response Body       Status Code
+
+
 // 1.Response header
-// ->server sends request header while sending information to client.
+// ->server sends response header while sending information to client.
 // -> When sign in we get cookie form request header. other than that is not used often.
 
 // 2.Response body
@@ -207,7 +218,7 @@
 
 // 5. How to create a HTTP server of our own?
 // ->HTTP server can be created using springboot, node...
-// ->we are going write in node.js and use library called express.
+// ->we are going write in node.js and usingq library called express.
 // ->express is called external library which is written by developers like fs library.
 // eg-1: by using fs library we can read file.
 // ->there are many libraries let to  create HTTP servers.
@@ -227,14 +238,46 @@
 // 6. type node index.js in terminal
 // ->go to chrome and type localhost:3000 then code get printed.
 
+
+
 // =>In replit we can directly code by creating new file.
 // ->1. In replit shell type npm instaLL express for installing express inside replit.
 // ->2. then type code.
 // ->3. copy express hello world code inside replit.
 // ->4. Whenever '/' is entered in replit then "Hello World" get printed.
 
+5.1 npm init -y command
+The command npm init -y is used to initialize a new Node.
+js project with default values without prompting the user for input. 
+The -y flag stands for "yes," and it automatically accepts all default configurations.
 
-// eg-1: creating HTTP server using node.js and Express.
+5.2  npm install express command
+The command npm install express is used to install the Express.
+js framework for Node.js. Express is a popular and widely used web application framework 
+that simplifies the process of building robust and scalable web applications.
+
+5.3  creating HTTP server using node.js and Express.
+
+// eg-1:
+
+// Code:
+// importing express library
+// const express = require("express");
+
+// // it intializes an instance of express
+// const app = express();
+// const port = 3000
+
+// app.get('/', function (req, res) {
+//     res.send("Hello World");
+// })
+
+// app.listen(port);
+
+// Output:
+// Hello World
+
+Code explaination
 // ->When anyone hit backend server then function(req,res){} will run.
 // ->res.send() ->by what information server is responding
 // ->Whenever '/' is entered then "Hello World" get printed.
@@ -259,25 +302,7 @@
 // )
 
 
-
-// Code:
-// importing express library
-// const express = require("express");
-
-// // it intializes an instance of express
-// const app = express();
-// const port = 3000
-
-// app.get('/', function (req, res) {
-//     res.send("Hello World");
-// })
-
-// app.listen(port);
-
-// Output:
-// Hello World
-
-
+5.4 Responding to client with json data
 // eg-2:
 // const express = require("express");
 // const app = express();
@@ -299,7 +324,8 @@
 //6. doubts 1:20:00
 // 1. node.js uses c++ under the hood.
 // 2. there is http library which let to create http server.
-// 3. When multiple request are sent to node.js util one request completed it will not go other.
+// 3. When multiple request are sent to node.js until one request completed it will not go 
+other.
 // ->db call is made when request is reahced.
 // ->data base call is asynchronous in JavaScript.
 // ->JavaScript is single thread it handles only one thread at a time.
@@ -314,7 +340,7 @@
 // app.listen(port);
 
 // 4. difference between express and fs
-// fs ->file system -  read files on system write to files on system.
+// fs ->file system -  read files on system or write to files on system.
 
 // 5. AWS is cloud provider.
 // ->where code is deployed and access by the world.
@@ -467,7 +493,8 @@
 // 9. Accessing data from server in our devices
 // ->vs code - server
 // ->postman - client
-// ->accessing we can access data from server in our devices if they are connected to same network using IP.
+// ->accessing we can access data from server in our devices if they are connected to same 
+network using IP.
 // -> type Ip adrress:port number.
 
 
@@ -549,23 +576,7 @@
 // { msg: 'What is 2+2' }
 
 
-// 13. Doubts
-// 1. How can we reastart server after we make changes.
-// ->Nodemon is a command-line tool that helps with the speedy development of Node. js applications. It monitors your project directory and automatically restarts your node application when it detects any changes. This means that you do not have to stop and restart your applications in order for your changes to take effect.
-
-// 2. we can use postman in vscode.
-
-// 3.Difference between express.js and Next.js?
-// ->Next.js is framework that lets to do frontend and backend.
-
-// 4. What is port?.
-// ->every machine has single IP and runs multiple processors.
-// ->In order to run multiple processors each processors binds itself to a port.
-// ->While sending a request we specify port.
-// ->a port is oneway to communicate with a machine.
-// ->it is a virtual point.
-
-
+12.2 giving body while sending request in postman
 // eg-2:
 // =>body tab in postman
 // {
@@ -594,6 +605,23 @@
 // });
 
 
+// 13. Doubts
+// 1. How can we reastart server after we make changes.
+// ->Nodemon is a command-line tool that helps with the speedy development of Node. js applications. It monitors your project directory and automatically restarts your node application when it detects any changes. This means that you do not have to stop and restart your applications in order for your changes to take effect.
+
+// 2. we can use postman in vscode.
+
+// 3.Difference between express.js and Next.js?
+// ->Next.js is framework that lets to do frontend and backend.
+
+// 4. What is port?.
+// ->every machine has single IP and runs multiple processors.
+// ->In order to run multiple processors each processors binds itself to a port.
+// ->While sending a request we specify port.
+// ->a port is oneway to communicate with a machine.
+// ->it is a virtual point.
+
+
 // 5. What is req and res?
 // ->callback function inside a library has req and res.
 // ->res is used for responding to request.
@@ -607,10 +635,27 @@
 // 6. What is body-parser?
 // ->body-parser is used to access request body.
 // ->The body-parser module enables us to parse incomming request bodies in a middleware.
-// ->express.js server needs to know what type of data you're sending over the network, so it knows how to parse it.
-// ->by express parse body. we can also tell in which form it has to parse(text)
+// ->express.js server needs to know what type of data you're sending over the network, 
+     so it knows how to parse it.
+// ->by express body-parser we can also tell in which form it has to parse(text)
 
-// 7. user is hitting function on sepcidic url and route.
+eg-1: parsing to json
+app.use(bodyParser.json());
+
+Output:
+set to Json in postman
+listening on port 3000
+{ message: 'What is 2+2' }
+
+eg-2
+set to text in postman
+app.use(bodyParser.text());
+
+Output:
+listening on port 3000
+what 2+2?
+
+// 7. user is hitting function on sepcific url and route.
 // eg:
 // app.post("/route",function(req,res){
 
@@ -659,7 +704,8 @@
 
 
 // 9. What are Query parameters?
-// Query parameters are a defined set of parameters (key-value pair) attached to the end of a URL used to provide additional information to a web server when making requests.
+// Query parameters are a defined set of parameters (key-value pair) attached to 
+   the end of a URL used to provide additional information to a web server when making requests.
 
 // eg-1:
 // const express=require("express");
@@ -688,7 +734,8 @@
 // 1. npm - it stands for node packaging manager. it lets to bring packages to macnhine.
 
 // 2.NPX stands for Node Package eXecute. It is simply an NPM package runner.
-// ->It allows developers to execute any Javascript Package available on the NPM registry without even installing it.
+// ->It allows developers to execute any Javascript Package available on the NPM registry 
+     without even installing it.
 // ->NPX is installed automatically with NPM version 5.2. 0 and above
 // ->We can use package immediately without installing it.
 
@@ -704,7 +751,8 @@
 
 // 12.  what is app.listen()?
 // ->it take over a port.
-// ->when port is given to listen() method in express it writes a logic to create a http server that listens on the port.
+// ->when port is given to listen() method in express it writes a logic to create a http server
+     that listens on the port.
 // ->maintainer are express wrote it to function like this.
 // ->fs - it starts to reads files.
 // ->similarly it starts to listen all request on the port.
