@@ -1,3 +1,399 @@
-Week 2.5 | Express and HTTP with real world examples, Postman  Date:07/03/24  Time:11:16 AM
+// Week 2.5 | Express and HTTP with real world examples, Postman  Date:07/03/24  Time:11:16 AM
 
+//=>Topics covered in this lecture
+// 1. Express and HTTP with real world examples
+// 2. relatable to understand what are HTTP servers.
+// 3. creating http server in express.
+// 4. what is postman? how it let's to interact with http server.
+
+//1. Illustration to understand HTTP servers
+// doctor ---> opens clinic ---> patients comes one by one
+// ->doctor is single threaded.
+// ->people get hospital address and navigate to it.
+// ->people wait in waiting area and then goes to doctor cabin.
+// ->doctor tells to person for getting medicin.(deligating tasks)
+// ->mean while doctor call other person.
+// ->once person who went to medicine comes he goes inside cabin.
+// ->your logic is like a doctor.
+// function calulateSum(n) {
+//     let ans = 0;
+
+// }
+
+
+// 1. What is HTTP server
+// ->writing code is one thing and exposing it to world is other thing.
+// ->What if you want to expose this logic to the world.
+// ->HTTP servers let's you to do.
+// ->HTTP server is like it lets to create a hospital where people can come and find you.
+// ->here information transfrer from code to user.
+// ->http server that exposes logic and user can access it.
+
+
+// 1.1 HTTP Hypertext Transfer Protocol
+// ->HTTP stands for Hypertext Transfer Protocol.
+// ->It is an application-layer protocol used for communication on the World Wide Web.
+// ->HTTP is the foundation of data communication on the internet and allows for the transfer of various types of data, including text, images, audio, video, and more.
+
+
+// 1.2 How to expose the logic or code to the world?
+// ->code or logic can be exposed by creating an HTTP server.
+// ->refer image express2
+
+// 1.3 How do I create an HTTP server?
+// ->by using express library http servers can be created.
+// ->HTTP is a protocal. it can be writtern any language.
+// Java       - springboot
+// javascript - node.js
+
+// ->In node.js express is one of the way to create http server.
+// ->eg-1: mulitple builder for single hospitals.
+
+// 1.4 What is express?
+//->it is library in Node.js that let's to create an http server.
+// ->similar to file system library.
+// ->smart people wrote it for creating http server.
+// ->just need to call some functionality and it exposes code or logic over the http protocol.
+// ->express in not bundled with node.
+
+
+// 1.5 logic or code  need to be exposed by http server
+// eg-1:
+// function calculateSum(n){
+//     let ans=0;
+//     for(let i=0;i<=n;i++){
+//         ans=ans+i;
+//     }
+//     return ans;
+// }
+
+// let ans =calculateSum(n);
+// console.log(ans);
+
+
+// 1.4 creating http server using express.
+
+// eg-2:exposing above code by creating http server using express
+
+// code:
+
+// importing express library
+// const express = require("express");
+
+// function calculateSum(n) {
+//     let ans = 0;
+//     for (let i = 0; i <= n; i++) {
+//         ans = ans + i;
+//     }
+//     return ans;
+// }
+
+// //it create instance of app
+// const app = express();
+// const port = 3000;
+
+// app.get("/", function (req, res) {
+//     const n = req.query.n;
+//     const ans = calculateSum(n);
+//     res.send(ans.toString());
+// });
+
+// app.listen(port, () => {
+//     console.log(`listens on port:${port}`)
+// });
+
+// output: 10
+
+// ->sending request by using url: http://localhost:3000/?n=4
+// ->n is given while sending request.
+
+
+
+
+// Code explaination:
+// 1. const app=expresss()
+// it create instance of app-  it is like room of doctor here people come and doctor exposes various functionalities(simple comsultancy, surgery).
+
+
+// 2. inside app.get
+// ->n is given as query while sending request to server.
+// ->function is called and ans is returned to the user.
+// ->exposing the doctors one functionality.
+
+// code:
+// app.get("/", function (req, res) {
+// const n = req.query.n;
+// const ans = calculateSum(n);
+// res.send(ans);
+// });
+
+// 3. app.listen(port,function(req,res){console.log(`listens on port:${port}`)})
+
+// ->decide the address of the clinic.
+// ->port number is like room number in hospital
+
+// 4. port number
+// ->refer image express1
+// For every process port number should be unique.
+
+// 5. res.send(ans.toString());
+// give response in the form of string. don't use number it creates issue. it may think as status code.
+
+//1.6 Sending http request
+// ->sending request by using url: http://localhost:3000/?n=4
+// ->n is given while sending request.
+// ->n=4 is query parameter.
+
+
+// 1.7 Installing express in machine
+// ->use npm install express command to install express in machine.
+
+// 1.8 code along class - creating http server using express
+
+// eg-1:
+// const express = require("express");
+// const app = express();
+
+
+// // route
+// app.get("/", function (req, res) {
+//     res.send("Hi there")
+
+// });
+
+// app.listen(3000);
+
+
+// code explaination:
+// 1. const express = require("express");
+// -> this is like creating hospital
+// 2.const app=express();
+// -> this is like creating clinic.
+// 2. app.listen(port); -> app is listening
+// ->clinic is open.
+// ->doctor is waiting for connections to come.
+
+// 3.app.get("/route",function(req,res){});
+// ->two arguments are accepted by express.
+// 1. what route should it listen?
+// eg-1:
+// ->url: localhost:3000/get
+// ->/get is route.
+// 2. function(req,res){}
+// ->it takes call back function as argument.
+// ->it is like anytime patient waiting in waiting room it sends one by one to cabin.
+
+// 4. res.send("Hi there")
+// ->any request comes it respond with "Hi there".
+// ->it accepts all the requests and return Hi there as reponse.
+
+// 5. Accessing with phone or sending request using phone
+// ->both devices should connect to same wifi.
+//->Know Ip by typing ifconfig command in cmd.
+//->type ip number:port number in mobile. it gives output.
+// eg-1: 192.168.231.140:3000
+
+
+// 1.9 Way to give input by the user
+// 1.In case of GET request query parameters used to give inputs.
+// ->after question mark they are parameters.
+// ->for catching query parameters at server 
+//   req.query.varaible
+// 1. query parameters
+// -> giving single parameters 
+// eg-1: http://localhost:3000/?n=4
+
+// ->giving multiple parameters
+// eg-1: http://localhost:3000/?n=4&a=10&b
+
+// 2. In case of post request inputs are given in the body.
+// ->body is place where we can specify inputs.
+
+
+
+
+
+// eg-2: giving parameters while sending request.
+// const express = require("express");
+// const methods = require("methods");
+// const { code } = require("statuses");
+// const app = express();
+// const port = 3000;
+
+// // logic 
+// function sum(n) {
+//     let ans = 0;
+//     for (let i = 0; i < n; i++) {
+//         ans = ans + i;
+//     }
+//     return ans;
+// }
+
+
+// // route
+// app.get("/", function (req, res) {
+//     const n = req.query.n;
+//     const ans = sum(n);
+//     res.send("sum is :" + ans.toString());
+
+// });
+
+// app.listen(port, function () {
+//     console.log(`listening on port ${port}`);
+// });
+
+
+// Output:sum is :6
+
+// 1.10 What are request methods?
+// 1. GET - getting information from server
+// ->The GET method is one of the HTTP methods used to retrieve data from a specified resource.
+// ->it is like going for a consultation to get a check up.
+
+// 2. POST - posting something on server.
+// ->The POST method is one of the HTTP methods used to submit data to be processed to a specified resource.
+// ->it is like going to have braces to teeth.
+
+// 3. PUT -  updating things on server
+// ->The PUT method is one of the HTTP methods used to update a resource on the server
+// ->going for adjusting  braces.
+
+// 4.Delete- The DELETE method is one of the HTTP methods used to request the removal of a resource on the server.
+// ->going to remove bandage.
+
+
+// 1.11 Status code
+// 1. 200 ->it indicates that the request was successful
+// ->it is like everything went fine
+
+// 2. 404 ->it indicates that the server could not find the requested resource.
+// ->doctor is not in hospital.
+
+// 3. 500 -> it indicates a generic error on the server side.
+// ->mid surgery light went away.
+
+
+// 4. 411 ->it indicates that the server refuses to accept the request without a defined Content-Length header
+// ->inputs was incorrect, wrong person came to surgery.
+
+// 5. 403
+// ->it indicates that the server understood the request, but it refuses to authorize it.
+// -> it is like you are not allowed in hospital.
+
+// 1.12 What is the benifit of status code?
+// ->it's just a way to signal to frontend.
+// ->Status codes serve as a simple and standardized way for servers to communicate the outcome of a request to the client. They help both machines and developers understand the result of the interaction.
+
+
+
+// 2. Assigmenet - Lets create in memory hospital(logic is like a doctor)
+// ->see image express3 
+// ->data is stored in variable.
+
+// Problem statement
+// create 4 routes(4 things that the hospital can do)
+// 1. GET - User can check how many kidneys they have and their health.
+// 2. POST - User can add a new kidney.
+// 3. PUT - User can replace a kidney, make it healthy.
+// 4. DELETE - user can remove a kidney.
+
+// ->When people go to hospital.com they can see their health of the kidney.
+// ->user sends request ot add kidney,heal kidney, remove kidney, replace kidney to end point.
+// ->backend should store information of the users.
+// ->if request comes backend should update in the memory.
+
+
+// Code:
+
+// let start creating an memory in array 
+// ->one kidney of the user is not healthy.
+const express = require("express");
+const app = express();
+const port = 3000;
+
+var users = [{ name: "john", kidneys: [{ healthy: false }] }];
+
+
+
+
+app.get("/kidneyCount", function (req, res) {
+    // kidneys health
+    const johnKidney = users[0].kidneys;
+    console.log(johnKidney);
+
+    // no. of kidneys
+    const numberOfKidneys = johnKidney.length;
+
+    // no. of healthy kidney
+    let numberOfHealthyKidney = 0;
+    for (let i = 0; i < johnKidney.length; i++) {
+        if (johnKidney[i].healthy) {
+            numberOfHealthyKidney++;
+        }
+    }
+
+    // number of unhealthy kidney
+    const numberOfUnhealthyKidneys = numberOfKidneys - numberOfHealthyKidney;
+    res.json({
+        johnKidney,
+        numberOfKidneys,
+        numberOfHealthyKidney,
+        numberOfUnhealthyKidneys
+    })
+
+});
+
+
+// 2. POST - User can add a new kidney.
+app.use(express.json());
+app.post("/addKidney", function (req, res) {
+    const isHealthy = req.body.healthy;
+    users[0].kidneys.push({ healthy: isHealthy });
+    req.json({
+        msg: "Done!"
+    });
+
+});
+
+
+// app.put("/", function(req,res){
+
+// });
+
+
+// app.delete("/", function(req,res){
+
+// });
+
+app.listen(port, function () {
+    console.log("clinic is open");
+})
+
+// Output:{"johnKidney":[{"healthy":false}],"numberOfHealthyKidney":0,"numberOfUnhealthyKidneys":1}
+
+// Code Explaination:
+
+
+
+// 2. POST - User can add a new kidney.
+// ->In case of post request inputs are given in the body.
+// ->add data in body->raw->json data(postman)
+// ->In order to recieve json body in case of POST request a middleware is needed.
+
+// app.use(express.json());
+
+
+// 2.1 How to send POST request from the browser?
+// ->In case of post request inputs are given in the body. body is place where we can specify inputs.
+// ->we can send from browser. dicuss after learning DOM concept.
+// ->by using postman post request can be sent.
+
+// 2.2 what is postman?
+// ->it is sort of simulator.
+// ->it let's to send GET, POST, PUT, DELETE requests etc.
+// ->Postman is a popular collaboration platform for API development. It provides tools for designing, testing, and documenting APIs.
+// ->Postman allows users to send HTTP requests (GET, POST, PUT, DELETE, etc.) to test APIs directly within the application.
+// ->backend servers are accessed by postman, mobile apps. other processes.
+// ->by using postman we can quickly test.
+// ->check this site similar to postman https://hoppscotch.io/
 
