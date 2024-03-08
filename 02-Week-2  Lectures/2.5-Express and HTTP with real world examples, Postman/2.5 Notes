@@ -112,7 +112,8 @@
 
 // Code explaination:
 // 1. const app=expresss()
-// it create instance of app-  it is like room of doctor here people come and doctor exposes various functionalities(simple comsultancy, surgery).
+// it create instance of app-  it is like room of doctor here people come and doctor exposes 
+various functionalities(simple comsultancy, surgery).
 
 
 // 2. inside app.get
@@ -252,14 +253,16 @@
 // ->it is like going for a consultation to get a check up.
 
 // 2. POST - posting something on server.
-// ->The POST method is one of the HTTP methods used to submit data to be processed to a specified resource.
+// ->The POST method is one of the HTTP methods used to submit data to be processed to a 
+specified resource.
 // ->it is like going to have braces to teeth.
 
 // 3. PUT -  updating things on server
 // ->The PUT method is one of the HTTP methods used to update a resource on the server
 // ->going for adjusting  braces.
 
-// 4.Delete- The DELETE method is one of the HTTP methods used to request the removal of a resource on the server.
+// 4.Delete- The DELETE method is one of the HTTP methods used to request the removal of a
+resource on the server.
 // ->going to remove bandage.
 
 
@@ -274,7 +277,8 @@
 // ->mid surgery light went away.
 
 
-// 4. 411 ->it indicates that the server refuses to accept the request without a defined Content-Length header
+// 4. 411 ->it indicates that the server refuses to accept the request without a defined 
+Content-Length header
 // ->inputs was incorrect, wrong person came to surgery.
 
 // 5. 403
@@ -283,7 +287,9 @@
 
 // 1.12 What is the benifit of status code?
 // ->it's just a way to signal to frontend.
-// ->Status codes serve as a simple and standardized way for servers to communicate the outcome of a request to the client. They help both machines and developers understand the result of the interaction.
+// ->Status codes serve as a simple and standardized way for servers to communicate the 
+outcome of a request to the client. They help both machines and developers understand the 
+result of the interaction.
 
 
 
@@ -385,15 +391,18 @@ app.listen(port, function () {
 
 
 // 2.1 How to send POST request from the browser?
-// ->In case of post request inputs are given in the body. body is place where we can specify inputs.
+// ->In case of post request inputs are given in the body. body is place where we can specify 
+inputs.
 // ->we can send from browser. dicuss after learning DOM concept.
 // ->by using postman post request can be sent.
 
 // 2.2 what is postman?
 // ->it is sort of simulator.
 // ->it let's to send GET, POST, PUT, DELETE requests etc.
-// ->Postman is a popular collaboration platform for API development. It provides tools for designing, testing, and documenting APIs.
-// ->Postman allows users to send HTTP requests (GET, POST, PUT, DELETE, etc.) to test APIs directly within the application.
+// ->Postman is a popular collaboration platform for API development. It provides tools for 
+designing, testing, and documenting APIs.
+// ->Postman allows users to send HTTP requests (GET, POST, PUT, DELETE, etc.) to test APIs 
+directly within the application.
 // ->backend servers are accessed by postman, mobile apps. other processes.
 // ->by using postman we can quickly test.
 // ->check this site similar to postman https://hoppscotch.io/
