@@ -456,8 +456,7 @@ app.listen(port, function () {
 // ->if kidneys are healthy it should not show make healthy kidneys button.
 
 
-// 2. What shoul happen if they are making a kidney healthy when all are already healthy.
-
+// 2. What should happen if they are making a kidney healthy when all are already healthy.
 
 
 // 2.1 How to send POST request from the browser?
