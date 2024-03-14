@@ -126,8 +126,8 @@ execute.
 // console.log(sumOfSomething(1,2,cube));
 
 
-// 7. Promises
-// code without promises
+
+//->code without promises
 // function square(n){
 //     return n*n;
 // }
@@ -144,7 +144,7 @@ execute.
 
 // console.log(sumOfAll(2,2,square));
 
-// 8. How to create our own asyncronous function
+// 7. How to create our own asyncronous function
 // ->creating wrapper around the readFile function.
 // ->definfing a function which takes call back.
 // ->usally all asyn functions you will write will be on top of JS provided async functions 
@@ -165,7 +165,7 @@ like setTimeout or fs.readFile.
 // readingFile(onDone());
 
 
-// 9. Promises
+// 8. Promises
 // ->it's just syntactic sugar still uses callbacks under the hood.
 // ->cleaner way of writing code using promises.
 
@@ -215,7 +215,7 @@ like setTimeout or fs.readFile.
 // before resolve
 // Hello World, this is my text file.
 
-// 10. Promise Class
+// 9. Promise Class
 // ->It is just a class tha makes calls backs and asynchronous function more readable.
 // ->Whenever promise class is intialized then function should given as first argument.
 // -> a promise at high level three states.
@@ -254,7 +254,7 @@ like setTimeout or fs.readFile.
 // [[PromiseState]]: "fulfilled"
 // [[PromiseResult]]: "Promise"
 
-// 11. Async await
+// 10. Async await
 // ->it is just syntactic sugar, still uses callbacks/Promises under the hood makes code much 
 readable than callbacks/Promises.
 // ->Usually used on the caller side, not on the side where you define an async function.
