@@ -19,7 +19,8 @@
 // 2. but we can context switch between tasks or we can delegate tasks to other people.
 
 
-// ->Javascipt is single threaded language but it can also context switch or deligate task other process.
+// ->Javascipt is single threaded language but it can also context switch or deligate task 
+other process.
 //1. context switching->multi tasking.
 //2. Delegate task -> assigning other thread.
 
@@ -84,7 +85,8 @@
 // console.log("Hi there");
 
 // eg-2:
-// ->In this case eventhough reading file has been completed it waits for busy waiting code to execute.
+// ->In this case eventhough reading file has been completed it waits for busy waiting code to 
+execute.
 
 // const fs = require("fs");
 // fs.readFile("text.txt", "utf-8", function (err, data) {
@@ -145,7 +147,8 @@
 // 8. How to create our own asyncronous function
 // ->creating wrapper around the readFile function.
 // ->definfing a function which takes call back.
-// ->usally all asyn functions you will write will be on top of JS provided async functions like setTimeout or fs.readFile.
+// ->usally all asyn functions you will write will be on top of JS provided async functions 
+like setTimeout or fs.readFile.
 
 // eg-1:
 // const fs = require("fs");
@@ -252,9 +255,11 @@
 // [[PromiseResult]]: "Promise"
 
 // 11. Async await
-// ->it is just syntactic sugar, still uses callbacks/Promises under the hood makes code much readable than callbacks/Promises.
+// ->it is just syntactic sugar, still uses callbacks/Promises under the hood makes code much 
+readable than callbacks/Promises.
 // ->Usually used on the caller side, not on the side where you define an async function.
-// ->any function that wants to use await, needs to be async rther than using .then syntax, we add before and get the final value in the variable.
+// ->any function that wants to use await, needs to be async rther than using .then syntax, 
+we add before and get the final value in the variable.
  
 
 
