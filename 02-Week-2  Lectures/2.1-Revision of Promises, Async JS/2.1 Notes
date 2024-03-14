@@ -139,12 +139,15 @@
 // hi there
 
 // eg-2:
-// ->js executes or loging the value of "a" and "ans" on the console after that it waits the readFile() function to executed.
+// ->js executes or loging the value of "a" and "ans" on the console after that it waits the
+readFile() function to executed.
 // ->once it recieves the data it prints the data in text file.
-// ->Telling other thread to do some work and main thread continues to do presnet work is known as asynchronous.
+// ->Telling other thread to do some work and main thread continues to do presnet work is
+known as asynchronous.
 // ->setTimeout function is given by browser to js to used it.
 // ->once the setTimeout() function get executed then it is pushed to callback queue.
-// ->event loop takes the takes setTimeout() execution context form callback queue and when call stack is empty then pushes it to call stack for executing it.
+// ->event loop takes the takes setTimeout() execution context form callback queue and when
+call stack is empty then pushes it to call stack for executing it.
 
 // let a = 1;
 // console.log(a);
@@ -198,7 +201,8 @@
 
 // 5.3.1 How to create own asynchronous function?
 // a. Approach-1: Wrapping another asynchronous function
-// ->we can wirte by wrapping aync function given by web api's. under the hood asynchronous functions are used  to create own asynchronous function.
+// ->we can wirte by wrapping aync function given by web api's. under the hood asynchronous 
+functions are used  to create own asynchronous function.
 // eg-1:
 // ->setTimeout() function inside reached web api environement.
 // ->this approach uses a callback.
@@ -324,7 +328,9 @@
 // 2. resolved
 // 3. rejected
 
-// 5. When task is delegated to web api's c++ code on different therad and mainting the clock in case of setTimeout function. browser are coded using c++ wile js thread executed the present code.
+// 5. When task is delegated to web api's c++ code on different therad and mainting the clock 
+in case of setTimeout function. browser are coded using c++ wile js thread executed the present
+code.
 // ->os works while reading file.
 // ->we cannot read files in browsersd due to security implication.
 // ->JS in the browser will not allow to read files.
@@ -355,7 +361,8 @@
 // First is done
 // second one is done
 
-// ->Javascript is single threaded language but it can deligate tasks to other thread and it continues it's work.
+// ->Javascript is single threaded language but it can deligate tasks to other thread and it 
+continues it's work.
 
 // 2. Defining promise?
 // function fn(resolve){
@@ -404,7 +411,8 @@
 
 // whoever calls function  gives it.
 
-// 5. Promise is class. which has constructor which accepts the function as argument.at some point given function is called.
+// 5. Promise is class. which has constructor which accepts the function as argument.at some 
+point given function is called.
 
 // setTimeout(function(){
 //     console.log("Hi there")
