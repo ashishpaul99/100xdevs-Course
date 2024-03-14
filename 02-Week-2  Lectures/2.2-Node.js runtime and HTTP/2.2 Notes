@@ -187,7 +187,7 @@ Response headers, Reponse body, and Status codes.
 // ->you do some logic on the input and calculate the output.
 // ->output body, headers and status code  is returned.
 
-// 4.7 What are the common methods send to Backend server?
+// 4.7 What are the common methods used to send request to Backend server?
 // 1. GET   -> to get information from the server.
 // 2. POST  -> to posting something on server.
 // 3. PUT   -> When updating something we used PUT method.
