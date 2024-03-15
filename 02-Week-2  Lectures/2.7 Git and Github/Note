@@ -1,0 +1,30 @@
+How to push code to github?
+->To push a file to a GitHub repository, you'll need to follow these general steps. I'll assume you've already set up a GitHub repository and have Git installed on your local machine:
+
+1. Initialize a Git repository (if not done already):
+->If your project is not yet a Git repository, navigate to your project's directory in the terminal and run:
+->git init
+
+2. Add a remote repository (if not added already):
+->If you haven't added your GitHub repository as a remote, use the following command:
+
+git remote add origin https://github.com/your-username/your-repository.git
+Replace the URL with the actual URL of your GitHub repository.
+
+3. Add and commit your file:
+->First, stage your file(s) for commit:
+
+git add filename.ext
+
+->Replace filename.ext with the actual name of the file you want to add.
+
+->Then, commit the changes:
+
+git commit -m "Add your commit message here"
+
+4. Push your changes to GitHub:
+->If you're pushing to the main branch (or master branch in older repositories), use:
+
+git push -u origin main
+
+Replace main with the name of your branch if it's different.

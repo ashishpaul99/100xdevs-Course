@@ -1,0 +1,85 @@
+8.1 Working with git 
+1. select a file -> open terminal or click show more option -> git bash here(git bash opens inside folder)
+->git is intialized into project.
+
+2. git status is a Git command used to display the current status of your working directory and staging area in a Git repository.
+1. Changes to be committed (in the staging area)
+This section shows the files that have been modified and staged for the next commit
+
+2. Changes not staged for commit:
+Here, Git displays the files that have been modified but are not yet staged. You need to add them to the staging area before committing.
+
+3. Untracked files:
+This section lists files in your working directory that are not yet tracked by Git. To include them in version control, you typically use git add to stage them.
+
+=>Workflow of git through example
+
+1. use git init command
+-> it intialize git into project.
+command: git init
+->use ls -al for seeing hidden folders.
+
+2. use git add to add files to git.
+->It takes files from local repo to stage area.
+->if file is not tracked then use git add command.
+
+3. before commiting type this command and give email and username
+1. Set a user name:
+->git config --global user.name "Your Name"
+
+2. Set a user email:
+->git config --global user.email "your.email@example.com"
+
+
+
+3. use git Commit with some message
+->it save chages and moves files from stage area to repository.
+-> "-m" which is used to give comment.
+Command: git commit -m "first commit" fileName
+
+->after commiting then it is in main branch.
+-> branch name is highlighted in git.
+eg: Ashishpaul@DESKTOP-12AGMBF MINGW64 ~/Desktop/git (main)
+
+4. create Github token in order to push code in to repository.
+
+Profile -> developer settings -> Token(classic) -->generate new token --> click on generate new classic -> give any name to token-->choose expiration date --> chek all the options.
+->token can be seen once if window closes it cannot be seen again. backup this token.
+
+5. git remote add origin 
+->The git remote add origin command is used to add a remote repository named "origin" to your local Git repository. 
+->This is commonly done when you want to connect your local repository to a remote repository on a server (e.g., GitHub, GitLab, Bitbucket). 
+->The "origin" is just a conventionally used name for the default remote repository,
+
+->basic syntax:
+git remote add origin <remote_repository_url>
+
+->connecting local repository to github repository
+git remote add origin https://github.com/username/repo.git
+
+->add a remote repository with a token
+git remote add origin https://username:token@github.com/username/repo.git
+
+eg-1:
+->token: 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
+ git remote add origin https://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@github.com/ashishpaul99/Learning-Git
+
+ ->this commands add remote origin for this project.
+
+ 6. git push
+ ->The git push command is used to upload local repository content to a remote repository. 
+ ->It's a fundamental Git command for sharing your changes with others or updating a remote repository.
+
+
+ -> to push changes from your local "main" branch to the remote repository named "origin," use
+ Command: git push origin main
+
+ ->If this is the first time you're pushing the branch, you might need to set up tracking with the -u 
+
+ cmd: git push -u origin main
+
+ ->This establishes a tracking relationship between your local branch and the remote branch, making it more convenient for future pushes and pulls.
+
+ eg-1:It pushes code to github repository
+ Ashishpaul@DESKTOP-12AGMBF MINGW64 ~/Desktop/git (main)
+$ git push -u origin main
