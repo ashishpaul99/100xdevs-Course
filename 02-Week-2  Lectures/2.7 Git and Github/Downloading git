@@ -1,3 +1,39 @@
+8. How to do things through git command line or git client?
+->Working on repository locally and pushing remote repositrory to github 
+
+1. use git insatller.
+2. use git bash
+3. after installation 
+->username and email should be configured.
+$ git config --global user.name "Emma Paris"
+$ git config --global user.email "eparis@atlassian.com"
+
+->How local repository knows what is the account that is liked with out github account.
+
+=>Installing Git in PC
+1. go to https://git-scm.com/ website
+2. Click download for windows.
+3. Install fit by clicking on downloded .exe file
+4. While installing add addtional icon, choose vs code as git default editor.
+5. name of the intial branch -> select override the default branch name-->main(give default brach name as main).
+6. Adjusting path environment 
+->git from the command line and also 3rd party software.
+7. chosing ssh executable
+->use bundled openSSH
+8. https transport backend --> openSSL library
+9. config the line ending conversions
+->checkout window-style
+10. config terminal emulator to use gitbash
+->use MinTTy
+11. default behaviour of "git pull"
+ ->fast forward or merge
+12. choose credential helper
+->Git credential manager
+13. config extra options
+->enable file system caching.
+14. experimental options
+->choose both (pseudo consoles and system monitor).
+
 8.1 Working with git 
 1. select a file -> open terminal or click show more option -> git bash here(git bash opens inside folder)
 ->git is intialized into project.
