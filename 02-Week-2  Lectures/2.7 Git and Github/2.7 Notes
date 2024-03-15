@@ -142,7 +142,7 @@ Step-3: git add
 collabrate over this changes.
 
 Step-4: git commit
-->you perform commit operation that moves the files from the stanging area. after push 
+->you perform commit operation that moves the files from the stanging area to github repository. after push 
 operation, it stores the changes permanently to the Git repository.
 ->commit moves all the files from staging area to repository.
 
