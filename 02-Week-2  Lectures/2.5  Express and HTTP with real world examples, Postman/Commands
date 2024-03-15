@@ -1,17 +1,24 @@
 1. npm init -y
 The command npm init -y initializes a new Node.js project with default settings, skipping the interactive prompts typically involved in setting up a new project. Here's what each part of the command does:
 
-npm: This invokes the Node Package Manager, which is used to manage dependencies and scripts for Node.js projects.
-init: This is a command in npm used to initialize a new Node.js project.
--y: This flag tells npm to automatically answer "yes" to all prompts that would normally be presented during the initialization process. It stands for "yes" or "yes to all".
-So, when you run npm init -y, npm creates a package.json file with default settings, without asking for your input. This is useful for quickly setting up a new project with minimal configuration.
+-> npm: This invokes the Node Package Manager, which is used to manage dependencies and scripts 
+for Node.js projects.
+-> init: This is a command in npm used to initialize a new Node.js project.
+-> -y: This flag tells npm to automatically answer "yes" to all prompts that would normally be 
+presented during the initialization process. It stands for "yes" or "yes to all".
+So, when you run npm init -y, npm creates a package.json file with default settings, without 
+asking for your input. This is useful for quickly setting up a new project with minimal 
+configuration.
 
 
 2. npm install express
 
-The command npm install express is used to install the Express.js framework for building web applications with Node.js. Here's what each part of the command does:
+The command npm install express is used to install the Express.js framework for building web 
+applications with Node.js. Here's what each part of the command does:
 
-npm: Invokes the Node Package Manager.
-install: Command used to install packages.
-express: The name of the package you want to install. In this case, it's Express.js.
-When you run npm install express, npm will download the Express.js package from the npm registry and install it into your project's node_modules directory. Additionally, it will update your package.json file to include Express.js as a dependency, along with its version number.
+->npm: Invokes the Node Package Manager.
+->install: Command used to install packages.
+->express: The name of the package you want to install. In this case, it's Express.js.
+When you run npm install express, npm will download the Express.js package from the npm registry 
+and install it into your project's node_modules directory. Additionally, it will update your 
+package.json file to include Express.js as a dependency, along with its version number.
