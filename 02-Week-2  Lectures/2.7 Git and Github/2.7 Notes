@@ -6,7 +6,9 @@
 
 2. What is Version Control System
 ->A system that keeps track of our files or projects.
-->It allows you to revert selected files to a previous state, revert the entire project to a previous state, compare changes over time, see who last modified something so that we can know what might be causing a problem, or what is the issue, who made it, and when with the details.
+->It allows you to revert selected files to a previous state, revert the entire project to a 
+previous state, compare changes over time, see who last modified something so that we can know 
+what might be causing a problem, or what is the issue, who made it, and when with the details.
 ->version control systems are important while working with bigger project.
 
 3. Types of VCS(Version Control System)
@@ -14,12 +16,15 @@
 2. Distributed
 
 1. Centralized VCS(Version Control System)
-->there is centralized server which is used to access the code and sametime make any changes to code.
+->there is centralized server which is used to access the code and sametime make any changes 
+to code.
 ->helps to backup, track and synchronized files.
 ->check image git4
 ->main trunk represents central server.
-->Developers can access code from the main trunk or centralized server and they also push back their changes whatever made to project to centralized service.
-->Central servers has to be available always for people to access code  and sametime make any changes to project.
+->Developers can access code from the main trunk or centralized server and they also push back 
+their changes whatever made to project to centralized service.
+->Central servers has to be available always for people to access code  and sametime make any 
+changes to project.
 ->Subversion and Team foundation server are very popular centralized VCS.
 
 eg-1: 
@@ -42,7 +47,8 @@ eg-1:
 
 1.2  Problem With Centralized VCS   
 1. Single Point of Failure 
-->If centralized servers not available then everything goes down nobody able collabrate on the project.
+->If centralized servers not available then everything goes down nobody able collabrate on the
+project.
 
 2. Limited Offline Access
 3. Slower Performance
@@ -53,13 +59,17 @@ eg-1:
 8. Security Concerns
 
 2. Distributed Version Control System
-->Distributed Version Control Systems (DVCS) are a type of version control system that allows multiple contributors to work on a project independently, without requiring a constant connection to a central server. 
-->Each user has a local copy of the entire repository, including its full history, on their machine. 
+->Distributed Version Control Systems (DVCS) are a type of version control system that allows 
+multiple contributors to work on a project independently, without requiring a constant 
+connection to a central server. 
+->Each user has a local copy of the entire repository, including its full history, on their 
+machine. 
 
 ->group of people have complete project along with  history within their machine.
 ->Server doesn't have to be available all the time to make chages to project.
 
-->changes can be done in local repo and In order to publish changes made in local repo then network is needed or pull the latest chages made by the other collobrators.
+->changes can be done in local repo and In order to publish changes made in local repo then
+network is needed or pull the latest chages made by the other collobrators.
 
 ->Devlopers are not dependent on each other they can work independently.
 
@@ -92,17 +102,20 @@ eg-1:
 3.1 Local repository
 ->Irrespective of using centralized or Decentralized tool it provides private workspace.
 ->Working copy of current project or current version of the project.
-->Developers make changes in private workspace and  Commit(sure) then these changes become part of repository.
+->Developers make changes in private workspace and  Commit(sure) then these changes become 
+part of repository.
 ->Git is reffered to local repositories.
 ->In this workspace version history is maintained, making changes and adding commits.
-->After making changes in local repository they are pushed to github then they become part of reposistory.
+->After making changes in local repository they are pushed to github then they become part of 
+reposistory.
 ->Git provides private copy of the whole repository.
 
 3.2 Commit 
 -> a "commit" refers to the act of saving changes to a repository. 
 
 3.3 Working Directory and Staging Area or Index
-->An intermediate area where commits can be formatted and reviewed before completing the commit.
+->An intermediate area where commits can be formatted and reviewed before completing the 
+commit.
 
 3.4 Push 
 ->send a change to another repository.
@@ -125,10 +138,12 @@ Step-2:
 
 Step-3: git add
 ->you can add these files to staging
-->these changes are permanently added to repository so they can seen by other developers and collabrate over this changes.
+->these changes are permanently added to repository so they can seen by other developers and 
+collabrate over this changes.
 
 Step-4: git commit
-->you perform commit operation that moves the files from the stanging area. after push operation, it stores the changes permanently to the Git repository.
+->you perform commit operation that moves the files from the stanging area. after push 
+operation, it stores the changes permanently to the Git repository.
 ->commit moves all the files from staging area to repository.
 
 5. There are lot of concept to know while working with git and github
@@ -141,7 +156,9 @@ Step-4: git commit
 ->it is a binary file.
 ->In Git database, it is named as SHA1 hash of that file.
 ->In Git, everything, including files, is content-addressed. 
-->Git uses a cryptographic hash function (SHA-1) to generate a unique identifier, known as a hash or checksum, for the content of each file and directory. ->This identifier is essentially a long string of characters representing the content's checksum.
+->Git uses a cryptographic hash function (SHA-1) to generate a unique identifier, known as a 
+hash or checksum, for the content of each file and directory. ->This identifier is essentially 
+a long string of characters representing the content's checksum.
 
        files data ---------> blobs(SHA1 hash of the file)
                         ->each vesion of a file is   rep by blob
@@ -151,7 +168,8 @@ Step-4: git commit
 5.2 Trees
 ->Tree is an object, which represents a directory.
 ->It holds blobs as well as other sub-directories.
-->A tree is binary file that stores refrence to blobs  and trees which also name as SHA1 hash of the tree object.
+->A tree is binary file that stores refrence to blobs  and trees which also name as SHA1 hash 
+of the tree object.
 ->it is basically maintains associations and relationship between directories, sub directories. 
 -> it a binary file.
 
@@ -165,13 +183,17 @@ Step-4: git commit
 ->it is also named by SHA1 hash.
 ->Commit object = a node of linked list.
 ->every commit object has a pointer to the parent commit object.
-->from a given commit, you can traverse back by looking at the parent pointer to view the history of the commit.
-->If a commit has multiple parents commits,then that particular commit has been created by merging two braches.
-eg: Some changes comes from point A and some from Point B then boths commit are merged to get one single output of the file.
+->from a given commit, you can traverse back by looking at the parent pointer to view the 
+history of the commit.
+->If a commit has multiple parents commits,then that particular commit has been created by 
+merging two braches.
+eg: Some changes comes from point A and some from Point B then boths commit are merged to get 
+one single output of the file.
 
 
 6. Git commands 
-1. git clone - Bring a repository hosted somewhere like github into folder or your local repository machine.
+1. git clone - Bring a repository hosted somewhere like github into folder or your local 
+repository machine.
 
 2. git add
 -> Track your files and changes in Git.
@@ -187,8 +209,10 @@ basic syntax:
 
 
 3. git commit
-->The git commit command is used in Git to save the changes you have made to your local repository. 
-->When you run git commit, you are creating a new snapshot of your project's current state, and this snapshot is added to the version history.
+->The git commit command is used in Git to save the changes you have made to your local 
+repository. 
+->When you run git commit, you are creating a new snapshot of your project's current state, 
+and this snapshot is added to the version history.
 
 
 basic syntax:
@@ -230,7 +254,8 @@ $ git config --global user.email "eparis@atlassian.com"
 2. Click download for windows.
 3. Install fit by clicking on downloded .exe file
 4. While installing add addtional icon, choose vs code as git default editor.
-5. name of the intial branch -> select override the default branch name-->main(give default brach name as main).
+5. name of the intial branch -> select override the default branch name-->main(give default 
+brach name as main).
 6. Adjusting path environment 
 ->git from the command line and also 3rd party software.
 7. chosing ssh executable
@@ -300,11 +325,13 @@ cmd: git push or git push origin master
 
 8.2  Difference between Intializing and cloning a repository
 1. Initializing a Repository:
-->Purpose: Initializing a repository is the first step in creating a new Git repository for a project.
+->Purpose: Initializing a repository is the first step in creating a new Git repository for a 
+project.
 ->Command: git init
 
 2.Cloning a Repository: 
-->Purpose: Cloning a repository involves creating a copy of an existing repository, either from a local or remote source.
+->Purpose: Cloning a repository involves creating a copy of an existing repository, either
+from a local or remote source.
 ->Command: git clone <repository_url>
 
 
@@ -331,7 +358,8 @@ eg:
 ->In order to add multiple files at a time.
 
 =>git commit -ma 
-->The git commit -a -m "message" command is a shortcut in Git that allows you to stage and commit changes in one step.
+->The git commit -a -m "message" command is a shortcut in Git that allows you to stage and 
+commit changes in one step.
 ->if existing files are modified we can us thid.
 
 4. git commit
@@ -349,7 +377,8 @@ eg-1:$ git commit -m "upadted readme and added html main page"
 ->adding a new SSH key to github account In case of mac and linux systems.
 
 ->for windows system
-->After installing Git, open a command prompt (you can use Git Bash, which comes with the Git installation) and configure your Git identity with your name and email:
+->After installing Git, open a command prompt (you can use Git Bash, which comes with the Git 
+installation) and configure your Git identity with your name and email:
 
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
@@ -361,7 +390,8 @@ In case of windows it is done by using gitbash.
 
 1. Github Workflow
 
-write code --->commit code changes --> Pull request(only if someone was the owner of the repository).
+write code --->commit code changes --> Pull request(only if someone was the owner of the 
+repository).
 
 2. Local Git Workflow
 
@@ -370,7 +400,8 @@ write code --> git add(stage changed code) --> git Commit(in order to save chang
 
 
 11. Git Branching and Merging
-->In version control system there can be cases were people work on multiple projects or multiple features.
+->In version control system there can be cases were people work on multiple projects or 
+multiple features.
 ->branching enbales us to make copy of the main code to work and it keeps main code stable.
 
 ->so for we worked on master.
@@ -394,9 +425,11 @@ Commit-1 -----Commit-2-----commit-3
 
 
 eg-2:
-->In order to work on ther feature creating other branch using master branch called feature branch.
+->In order to work on ther feature creating other branch using master branch called feature 
+branch.
 ->feature contains all the commits which are present in master branch.
-->When commits are made in feature brach master branch not aware these changes because these are exclusively part of feature branch.
+->When commits are made in feature brach master branch not aware these changes because these
+are exclusively part of feature branch.
 ->Once testing the changes done in feature branch these changes are put into master branch.
 
 2. Merging
@@ -411,12 +444,15 @@ eg-2:
 
 
 =>fixing bug(let's say)
-->In order to fix a bug in features then it cannot be done on feature branch because it is not stable but it can done on mster branch.
+->In order to fix a bug in features then it cannot be done on feature branch because it is not 
+stable but it can done on mster branch.
 ->another branch(hotfix branch) is created by using master branch.
-->After fixing chages they will merged hotfix brach with  master branch and feature brach with master branch.
+->After fixing chages they will merged hotfix brach with  master branch and feature brach with
+master branch.
 ->branch will be sync with eachother.
 
-->Commit-4 is a place where master brach is used to create hotfix branch after it is merged or updated then finally feature brach is merged with master branch.
+->Commit-4 is a place where master brach is used to create hotfix branch after it is merged or 
+updated then finally feature brach is merged with master branch.
 
 
 ->check image git17
@@ -472,14 +508,17 @@ Your branch is up to date with 'origin/main'.
 $ cat README.md
 # Devops
 
-=>In order to changes to available in main branch as well then merge feature_update_files branch with main branch.
+=>In order to changes to available in main branch as well then merge feature_update_files 
+branch with main branch.
 
 ->use push command  to merge local branch with main branch.
 Command: git push -u origin brachNameToBeMergedWithMain
 
 
 4.git diff
-->The git diff command is used to display the differences between various Git objects such as commits, branches, files, and more. It provides a way to see what changes have been made to the content of those objects.
+->The git diff command is used to display the differences between various Git objects such as 
+commits, branches, files, and more. It provides a way to see what changes have been made to 
+the content of those objects.
 command: git diff fileName
 
 eg-1:seeing what changes are made in braches
@@ -495,7 +534,9 @@ index ec7f2d8..ba04b0c 100644
 
 5. git pull
 ->Pull request is a way to merge our changes from one branch to another branch. 
-->The git pull command is used to fetch and integrate changes from a remote repository into your current branch. Essentially, it's a combination of two other Git commands: git fetch and git merge.
+->The git pull command is used to fetch and integrate changes from a remote repository into 
+your current branch. Essentially, it's a combination of two other Git commands: git fetch and 
+git merge.
 
 5.1  pull request process:
 1. Create a Branch: Work on changes in a separate branch from the main development branch.
@@ -508,15 +549,18 @@ index ec7f2d8..ba04b0c 100644
 8. Cleanup: Delete the feature branch after merging.
 
 5.2 Opening pull request
-->Create a pull request for 'features_updating_files' on GitHub by visiting repository on github.
+->Create a pull request for 'features_updating_files' on GitHub by visiting repository on 
+github.
 ->creating pull request from github UI.
-->In order to merge working(features_updating_files) branch with main branch pull request is used.
+->In order to merge working(features_updating_files) branch with main branch pull request is 
+used.
 
 5.3 While raising PR details should be added
 1. What is PR stands for
 2. What are the things added and subtracted.
 
-->generally when creating PR multiple people collbrating on pull request. they can ask you change few things.
+->generally when creating PR multiple people collbrating on pull request. they can ask you 
+change few things.
 ->it can be done in file changed tab
 
 13. What is a Git Merge Conflict?
@@ -526,12 +570,14 @@ index ec7f2d8..ba04b0c 100644
 
 Merge conflicts
 1. While starting the merge process
-->If there are changes in the working directory stage area for the current project, merging won't start.
+->If there are changes in the working directory stage area for the current project, 
+merging won't start.
 ->In this case, conflicts happen due to pending changes that need to be stabilized.
 
 2. During the merge process
 ->When there is conflict between the local brach and lthe branch being merged.
-->git resolves as much as possible, but there are things that have to be resolved manually in the conflicted files.
+->git resolves as much as possible, but there are things that have to be resolved manually in
+the conflicted files.
 ->check git20 image
 
 ->this conflicts can be handled from github UI and git command line.
@@ -546,10 +592,12 @@ eg-1: Merge conflicts
 git checkout: Used to undo the changes made to the file, or for changing branches.
 3. git reset --mixed: Used to undo changes to the working directory and staging area.
 4. git merge --abort: Helps in exiting the merge process and returning back to the state before the merging began.
-5. git reset: Used at the time of merge conflict to reset the conflicted files to their original state.
+5. git reset: Used at the time of merge conflict to reset the conflicted files to their 
+original state.
 
 Important points
-1. When working with braches it is good practice to delete which no longer needed or have been merged into main brach to prevent lot of  stale branches.
+1. When working with braches it is good practice to delete which no longer needed or have been 
+merged into main brach to prevent lot of  stale branches.
 ->deleting branch by using 
 Command: git branch -d branchName
 
@@ -558,7 +606,8 @@ eg-1:creating a conflict and solving it.
 2. make changes in file and then go to master branch.
 3. make some changes there too.
 -> stash 
-4. before switching to hotfix branch commit changes which are made in index.html file in main branch.
+4. before switching to hotfix branch commit changes which are made in index.html file in main 
+branch.
 5. then switch hotfix branch.
 6.  When mergin two files we see conflict
 $ git merge main
@@ -596,7 +645,8 @@ Already up to date.
 
 
 15. What are issues in github
-->Issues in github will allow to collobrate, track chages and communicate what has to done in repository.
+->Issues in github will allow to collobrate, track chages and communicate what has to done in 
+repository.
 ->Issues are cross reference in pull request.
 ->they should mentions in pull request.
 ->Once pull request is merged they choose action to be taken.
@@ -614,7 +664,8 @@ Already up to date.
 
 
 16.Linking a pull request to an issue using a keyword
-You can link a pull request to an issue by using a supported keyword in the pull request's description or in a commit message. The pull request must be on the default branch.
+You can link a pull request to an issue by using a supported keyword in the pull request's 
+description or in a commit message. The pull request must be on the default branch.
 
 close
 closes
@@ -625,117 +676,3 @@ fixed
 resolve
 resolves
 resolved
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
