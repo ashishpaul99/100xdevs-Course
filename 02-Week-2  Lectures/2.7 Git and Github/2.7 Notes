@@ -205,7 +205,7 @@ basic syntax:
             git add <filename>
 
 2. This command stage all changes in the working directory
-            git add 
+            git add * 
 
 
 3. git commit
