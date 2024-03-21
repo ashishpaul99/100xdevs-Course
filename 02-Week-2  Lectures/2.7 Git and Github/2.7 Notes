@@ -247,7 +247,7 @@ git commit -m "Your commit message here"
 $ git config --global user.name "Emma Paris"
 $ git config --global user.email "eparis@atlassian.com"
 
-->How local repository knows what is the account that is liked with out github account.
+->How local repository knows what is the account that is linked with github account.
 
 =>Installing Git in PC
 1. go to https://git-scm.com/ website
