@@ -238,7 +238,7 @@ git commit -m "Your commit message here"
 
 
 8. How to do things through git command line or git client?
-->Working on repository locally and pushing remote repositrory to github 
+->Working on repository locally and pushing local repositrory to github 
 
 1. use git insatller.
 2. use git bash
