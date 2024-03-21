@@ -319,9 +319,13 @@ origin  https://github.com/ashishpaul99/Learning-Git.git (push)
 -> this command is used to push files from staged area or local repository to github repository.
 cmd: git push or git push origin master
 
-->origin is where current repository is located.
-->master is branch In order to push.
-
+1. git push: This is the Git command used to push your changes from your local repository to a
+remote repository.
+2. origin: This is the name of the remote repository. By convention, origin is the default name
+given to the remote repository from which you cloned your local repository. It could be a URL 
+pointing to a remote repository.
+3.main: This is the name of the branch you want to push. In Git, main is often used as the 
+primary branch name, replacing master in many repositories.
 
 8.2  Difference between Intializing and cloning a repository
 1. Initializing a Repository:
