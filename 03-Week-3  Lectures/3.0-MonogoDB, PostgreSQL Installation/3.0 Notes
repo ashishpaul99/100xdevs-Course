@@ -1,0 +1,35 @@
+3.0 Week-3 Lectures   Date:20/03/24   Time:2:15 PM
+3.0.1 | What we're covering in week 3?
+1. Middlewares, routes, status code and global catches.
+2. Databases(NoSQL/SQl)
+3. Mango and postgress deep dive
+
+
+3.0.7 | Mongo installation
+->MongoDB NoSQL database.
+->getting free mongoDB instance.
+->go to mongoDB website
+->create account->select free version
+1. security-> quick start
+->set username and password
+->set Ip Address to 0.0.0.0/0 ->finish close.
+
+2. Database Deployments
+->clusterO ->connect ->Compass -> Connecting with MongoDB Compass -> I don't have MongoDB Compass installed ->download Compass ->copy url(final url you need to connect to your mangoDB instance. it is url for mongoDB instance)->Paste url in mongoDB Compass ->replace username and password with our credentials->click on connect.
+
+->
+2.1 MongoDB Compass 
+->graphical user interface(GUI) that visualize mongoDB database which is helpful in debugging.
+
+3.0.8 | Postgres installation
+->PostgreSQL, often referred to as Postgres, is a powerful open-source relational database management system (RDBMS).
+
+
+3.0.8.1 having cloud postgres url.
+->go to neon.tech
+1. sign up.
+2. give project name -> database name -> create project
+3. it gives long string -> copy that string.
+-> it is url for postgres database created by non-tech for free.
+
+
