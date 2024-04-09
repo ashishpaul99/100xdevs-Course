@@ -66,7 +66,7 @@ app.listen(port, function () {
     console.log("Listening on port 3000");
 })
 
-// eg-2: getting query parametres and authenticating.
+//1.3.1 getting query parametres and authenticating.
 // ->Ugly  way of doing authentication and password.
 const express = require("express");
 const app = express();
@@ -104,7 +104,7 @@ app.listen(port, function () {
 // ->send express query parameters in url.
 // eg: http://localhost:3000/health-checkup?kidneyId=2
 
-// eg-3: Introduce another route that does kidney replacement. inputs need to be same.
+// 1.3.2 Introduce another route that does kidney replacement. inputs need to be same.
 // ->Ugly solution -Create a new route,repeat code.
 // ->it's an ugly solution.
 // ->refer image 3.6 and 3.7
@@ -158,8 +158,7 @@ app.listen(port, function () {
     console.log(`listening on port ${port}`);
 })
 
-// eg-4:
-// Slightly better solution
+//1.3.3 Slightly better solution
 // ->refer image 3.7
 // ->creating wrapper function.
 
@@ -222,7 +221,7 @@ app.listen(port, function () {
 
 
 
-//1.5 mutlple call back fcuntions can be given to express methods.
+//1.3.4 mutlple call back fcuntions can be given to express methods.
 // eg-1:
 const express=require("express");
 const app=express();
