@@ -7,7 +7,8 @@ const { code } = require("statuses")
 // ->Before you reach the doctors
 // 1. your adhar/insurance info is taken. only if you have insurance you proceed.
 // 2. blood test is done ->if it is fine go to BP check.
-// 3. finally patient goes to doctor. there will be pre-check happens before enter into doctors cabin.
+// 3. finally patient goes to doctor. there will be pre-check happens before enter into 
+//    doctors cabin.
 // ->if pre checks are not good then patient are not allowed.
 
 // ->check image 3.2
@@ -44,12 +45,15 @@ app.get("/health-checkup", function (req, res) {
 
 // 1.3 Middlewares are needed for doing this pre-checks.
 // ->Check image 3.4
-// ->before meeting the doctor all pre-checks should be happen simillarly before executing logic in code authentication and input validation is important.
+// ->before meeting the doctor all pre-checks should be happen simillarly before executing 
+//   logic in code authentication and input validation is important.
 
 // ->before we proceed, lets add constraints to out route
-// 1. User needs to send a kidneyID as a Query parameter which should be a number from 1-2 =(humans only has 2 Kidneys).
-// eg:http://localhost:3000/health-checkup?n=3000
-// ->Whenever user hits health-checkup end point user should give query parameter called kidney ID which is either 1 or 2.
+// 1. User needs to send a kidneyID as a Query parameter which should be a number from 
+//    1-2(humans only has 2 Kidneys).
+//    eg:http://localhost:3000/health-checkup?n=3000
+// ->Whenever user hits health-checkup end point user should give query parameter called kidney
+//   ID which is either 1 or 2.
 
 // eg-1:
 const express = require("express");
@@ -95,7 +99,8 @@ app.listen(port, function () {
 
 
 // code explaination
-// ->while sending request send username and password in headers post in postman for authentication.
+// ->while sending request send username and password in headers post in postman for 
+//   authentication.
 // ->send express query parameters in url.
 // eg: http://localhost:3000/health-checkup?kidneyId=2
 
@@ -212,7 +217,8 @@ app.listen(port, function () {
 })
 
 
-//=>Middlewares is solution for above case use case for avoiding ugly solution like repeating code.
+//=>Middlewares is solution for above case use case for avoiding ugly solution like repeating 
+//  code.
 
 
 
@@ -248,7 +254,8 @@ app.listen(port, function () {
 
 
 // 1.6 next function in express.js middleware
-// To define a middleware function in Express, you use the use() method on the Express application object. Each middleware function takes three arguments: req, res, and next.
+// To define a middleware function in Express, you use the use() method on the Express 
+// application object. Each middleware function takes three arguments: req, res, and next.
 
 // Middleware function
 app.use((req, res, next) => {
@@ -278,9 +285,11 @@ app.listen(port, function () {
 
 
 // 1.7 Middlewares is solution for this use case.
-// =>Real Optimum solution in express and generally In other languages for this use case is middlewares.
+// =>Real Optimum solution in express and generally In other languages for this use case is 
+//   middlewares.
 // ->Image s8
-// ->In this case route only worry about app logic it will not bother about authentication and input validation.
+// ->In this case route only worry about app logic it will not bother about authentication and 
+//   input validation.
 // ->How do you define middleware?
 // ->How does middleware do early return.
 // ->How middleware send control to next middleware.
@@ -382,33 +391,3 @@ app.listen(port,function(){
 
 
 // 2. How to use middlewares without repeating code for every route.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
