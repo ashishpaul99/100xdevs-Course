@@ -251,9 +251,15 @@ app.listen(port, function () {
 // 1. control reaches to next function after the route.
 
 
-// 1.5 next function in express.js middleware
+// 1.5 Middleware function in express
+// In Express.js, middleware functions are a fundamental aspect of request processing. 
+// They are functions that have access to the request object (req), the response object (res), 
+// and the next middleware function in the application's request-response cycle. 
+// ->Middleware functions can perform tasks such as logging, authentication, data parsing, error handling, 
+// and more.
 // To define a middleware function in Express, you use the use() method on the Express 
 // application object. Each middleware function takes three arguments: req, res, and next.
+
 
 // Middleware function
 app.use((req, res, next) => {
@@ -343,7 +349,8 @@ app.listen(port, function () {
 
 // 2. userMiddleware is next function of route.
 // ->username and password is extracted using uesrMiddleware function.
-// ->if username and password is not correct it responds with status code and "Incorrect inputs".
+// ->if username and password is not correct it responds with status code and 
+//   "Incorrect inputs".
 // -> if inputs are correct next() function is called.
 
 // 3. then control reaches to kidneyMiddleware function.
