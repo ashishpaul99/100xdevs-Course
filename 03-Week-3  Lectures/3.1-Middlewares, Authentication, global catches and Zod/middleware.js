@@ -220,8 +220,7 @@ app.listen(port, function () {
 //  code.
 
 
-
-//1.3.4 mutlple call back fcuntions can be given to express methods.
+// 1.4 mutlple call back fcuntions can be given to express methods.
 // eg-1:
 const express=require("express");
 const app=express();
@@ -252,7 +251,7 @@ app.listen(port, function () {
 // 1. control reaches to next function after the route.
 
 
-// 1.6 next function in express.js middleware
+// 1.5 next function in express.js middleware
 // To define a middleware function in Express, you use the use() method on the Express 
 // application object. Each middleware function takes three arguments: req, res, and next.
 
@@ -283,7 +282,7 @@ app.listen(port, function () {
 });
 
 
-// 1.7 Middlewares is solution for this use case.
+// 1.6 Middlewares is solution for this use case.
 // =>Real Optimum solution in express and generally In other languages for this use case is 
 //   middlewares.
 // ->Image s8
