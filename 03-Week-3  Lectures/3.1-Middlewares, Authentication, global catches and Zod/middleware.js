@@ -16,13 +16,13 @@ const { code } = require("statuses")
 
 // 1.1 Equivalent code
 // eg-1:
-// const express = require("express");
-// const app = express();
+const express = require("express");
+const app = express();
 
-// // any request comes regarding check up results it returns checkup info
-// app.get("/health-checkup", function (req, res) {
-//     res.send("yout heart is healthy");
-// })
+// any request comes regarding check up results it returns checkup info
+app.get("/health-checkup", function (req, res) {
+    res.send("yout heart is healthy");
+})
 
 // =>How do do you?
 // 1. Auth checks? (Does this user have funds to visit the doctor).
@@ -52,48 +52,46 @@ const { code } = require("statuses")
 // ->Whenever user hits health-checkup end point user should give query parameter called kidney ID which is either 1 or 2.
 
 // eg-1:
-// const express = require("express");
-// const app = express();
-// const port = 3000;
-// app.get("/health-checkup", function (req, res) {
-//     res.send("yout heart is healthy");
-// })
-// app.listen(port, function () {
-//     console.log("Listening on port 3000");
-// })
+const express = require("express");
+const app = express();
+const port = 3000;
+app.get("/health-checkup", function (req, res) {
+    res.send("yout heart is healthy");
+})
+app.listen(port, function () {
+    console.log("Listening on port 3000");
+})
 
 // eg-2: getting query parametres and authenticating.
 // ->Ugly  way of doing authentication and password.
-// const express = require("express");
-// const app = express();
-// const port = 3000;
+const express = require("express");
+const app = express();
+const port = 3000;
 
-// app.get("/health-checkup", function (req, res) {
-//     // do health checkup
-//     const kidneyId = req.query.kidneyId;
-//     const username = req.headers.username;
-//     const password = req.headers.password;
+app.get("/health-checkup", function (req, res) {
+    // do health checkup
+    const kidneyId = req.query.kidneyId;
+    const username = req.headers.username;
+    const password = req.headers.password;
 
-//     // Authentication
-//     if (!(username === "ashishpaul99" && password === "123")) {
+    // Authentication
+    if (!(username === "ashishpaul99" && password === "123")) {
 
-//         res.status(403).json({ msg: "user doesn't exist" });
-//         return;
+        res.status(403).json({ msg: "user doesn't exist" });
+        return;
+    }
+    // input validation
+    if (kidneyId != 1 && kidneyId != 2) {
+        res.status(411).json({ msg: "worng input" });
+        return;
+    }
 
-//     }
+    res.send("your heart is healthy");
+});
 
-//     // input validation
-//     if (kidneyId != 1 && kidneyId != 2) {
-//         res.status(411).json({ msg: "worng input" });
-//         return;
-//     }
-
-//     res.send("your heart is healthy");
-// });
-
-// app.listen(port, function () {
-//     console.log(`listening on port ${port}`);
-// })
+app.listen(port, function () {
+    console.log(`listening on port ${port}`);
+})
 
 
 // code explaination
@@ -107,127 +105,111 @@ const { code } = require("statuses")
 // ->refer image 3.6 and 3.7
 
 
-// const express = require("express");
-// const app = express();
-// const port = 3000;
+const express = require("express");
+const app = express();
+const port = 3000;
 
-// app.get("/health-checkup", function (req, res) {
-//     // do health checkup
-//     const kidneyId = req.query.kidneyId;
-//     const username = req.headers.username;
-//     const password = req.headers.password;
+app.get("/health-checkup", function (req, res) {
+    // do health checkup
+    const kidneyId = req.query.kidneyId;
+    const username = req.headers.username;
+    const password = req.headers.password;
 
-//     // Authentication
-//     if (!(username === "ashishpaul99" && password === "123")) {
+    // Authentication
+    if (!(username === "ashishpaul99" && password === "123")) {
 
-//         res.status(403).json({ msg: "user doesn't exist" });
-//         return;
+        res.status(403).json({ msg: "user doesn't exist" });
+        return;
+    }
+    // input validation
+    if (kidneyId != 1 && kidneyId != 2) {
+        res.status(411).json({ msg: "worng input" });
+        return;
+    }
+    res.send("your heart is healthy");
+});
 
-//     }
+// replacing kidneys
+app.put("/replacekidney", function (req, res) {
+    const kidneyId = req.query.kidneyId;
+    const username = req.headers.username;
+    const password = req.headers.password;
+    // Authentication
+     if (!(username === "ashishpaul99" && password === "123")) {
+        res.status(403).json({ msg: "user doesn't exist" });
+        return;
+    }
+    // input validation
+    if (kidneyId != 1 && kidneyId != 2) {
+        res.status(411).json({ msg: "worng input" });
+        return;
+    }
+    // replacement logic
+    res.json({msg:"kidney replaced"});
 
-//     // input validation
-//     if (kidneyId != 1 && kidneyId != 2) {
-//         res.status(411).json({ msg: "worng input" });
-//         return;
-//     }
+});
 
-//     res.send("your heart is healthy");
-// });
-
-// // replacing kidneys
-// app.put("/replacekidney", function (req, res) {
-//     const kidneyId = req.query.kidneyId;
-//     const username = req.headers.username;
-//     const password = req.headers.password;
-//     // Authentication
-//      if (!(username === "ashishpaul99" && password === "123")) {
-
-//         res.status(403).json({ msg: "user doesn't exist" });
-//         return;
-
-//     }
-//     // input validation
-//     if (kidneyId != 1 && kidneyId != 2) {
-//         res.status(411).json({ msg: "worng input" });
-//         return;
-//     }
-
-//     // replacement logic
-//     res.json({msg:"kidney replaced"});
-
-// });
-
-// app.listen(port, function () {
-//     console.log(`listening on port ${port}`);
-// })
+app.listen(port, function () {
+    console.log(`listening on port ${port}`);
+})
 
 // eg-4:
 // Slightly better solution
 // ->refer image 3.7
 // ->creating wrapper function.
 
-// const express = require("express");
-// const app = express();
-// const port = 3000;
+const express = require("express");
+const app = express();
+const port = 3000;
 
-// function credentialValidator(username,password){
-//     // Authentication
-//     if (!(username === "ashishpaul99" && password === "123")) {
-//         return false;
+function credentialValidator(username,password){
+    // Authentication
+    if (!(username === "ashishpaul99" && password === "123")) {
+        return false;
 
-//     }
+    }
+    return true;
+}
 
-//     return true;
+function kidneyValidator(kidneyId){
+    // input validation
+    if (kidneyId != 1 && kidneyId != 2) {
+        return false;
+    }
+    return true;
+}
 
-// }
+app.get("/health-checkup", function (req, res) {
+    // do health checkup
+    const kidneyId = req.query.kidneyId;
+    const username = req.headers.username;
+    const password = req.headers.password;
+    if(credentialValidator()){
+        res.json({msg:"user doesn't exist"})
+     }
 
-// function kidneyValidator(kidneyId){
-//     // input validation
-//     if (kidneyId != 1 && kidneyId != 2) {
-//         return false;
-//     }
-
-//     return true;
-// }
-
-// app.get("/health-checkup", function (req, res) {
-//     // do health checkup
-//     const kidneyId = req.query.kidneyId;
-//     const username = req.headers.username;
-//     const password = req.headers.password;
-
-//     if(credentialValidator()){
-//         res.json({msg:"user doesn't exist"})
-//      }
-
-//      if(kidneyValidator()){
-//       res.json({mag:"Invalid inputs"})
-//      }
-
-
-//     res.send("your heart is healthy");
-// });
+     if(kidneyValidator()){
+      res.json({mag:"Invalid inputs"})
+     }
+    res.send("your heart is healthy");
+});
 
 // // replacing kidneys
-// app.put("/replace-kidney", function (req, res) {
-//     const kidneyId = req.query.kidneyId;
-//     const username = req.headers.username;
-//     const password = req.headers.password;
+app.put("/replace-kidney", function (req, res) {
+    const kidneyId = req.query.kidneyId;
+    const username = req.headers.username;
+    const password = req.headers.password;
+   if(credentialValidator()){
+      res.json({msg:"user doesn't exist"})
+   }
+   if(kidneyValidator()){
+    res.json({mag:"Invalid inputs"})
+   }
+});
 
-//    if(credentialValidator()){
-//       res.json({msg:"user doesn't exist"})
-//    }
-
-//    if(kidneyValidator()){
-//     res.json({mag:"Invalid inputs"})
-//    }
-
-
-// });
-
-// app.listen(port, function () {
-//     console.log(`listening on port ${port}`);
-// })
+app.listen(port, function () {
+    console.log(`listening on port ${port}`);
+})
 
 
 //=>Middlewares is solution for above case use case for avoiding ugly solution like repeating code.
@@ -236,25 +218,25 @@ const { code } = require("statuses")
 
 //1.5 mutlple call back fcuntions can be given to express methods.
 // eg-1:
-// const express=require("express");
-// const app=express();
-// app.get("/cb",cb1,cb2,function(req,res){
+const express=require("express");
+const app=express();
+app.get("/cb",cb1,cb2,function(req,res){
 
-// });
+});
 
 // eg-2:
-// const express = require("express");
-// const app = express();
-// const port = 3000;
-// app.get("/health", function (req, res) {
-//     console.log("hi from req1");
-// }, function (req, res) {
-//     console.log("hi from req2");
-// });
+const express = require("express");
+const app = express();
+const port = 3000;
+app.get("/health", function (req, res) {
+    console.log("hi from req1");
+}, function (req, res) {
+    console.log("hi from req2");
+});
 
-// app.listen(port, function () {
-//     console.log(`listening to port ${port}`);
-// });
+app.listen(port, function () {
+    console.log(`listening to port ${port}`);
+});
 
 // Output:
 // listening to port 3000
@@ -269,10 +251,10 @@ const { code } = require("statuses")
 // To define a middleware function in Express, you use the use() method on the Express application object. Each middleware function takes three arguments: req, res, and next.
 
 // Middleware function
-// app.use((req, res, next) => {
-//     console.log('This is a middleware function');
-//     next(); // Call the next middleware function in the stack
-//   });
+app.use((req, res, next) => {
+    console.log('This is a middleware function');
+    next(); // Call the next middleware function in the stack
+  });
 
 //1.6.1 next is function itself which is called when things are fine.
 // eg-1:
@@ -280,19 +262,19 @@ const { code } = require("statuses")
 // ->next function can also have next function.
 
 
-// const express = require("express");
-// const app = express();
-// const port = 3000;
-// app.get("/", function (req, res, next) {
-//     console.log("hi from req1");
-//     next();
-// }, function (req, res, next) {
-//     console.log("hi from req2");
-// });
+const express = require("express");
+const app = express();
+const port = 3000;
+app.get("/", function (req, res, next) {
+    console.log("hi from req1");
+    next();
+}, function (req, res, next) {
+    console.log("hi from req2");
+});
 
-// app.listen(port, function () {
-//     console.log(`listening to port ${port}`);
-// });
+app.listen(port, function () {
+    console.log(`listening to port ${port}`);
+});
 
 
 // 1.7 Middlewares is solution for this use case.
@@ -308,45 +290,45 @@ const { code } = require("statuses")
 
 
 // eg-1:
-// const express = require("express");
-// const app = express();
-// const port = 3000;
+const express = require("express");
+const app = express();
+const port = 3000;
 
-// // Defining middleware(just another function fn)
-// function userMiddleware(res, req, next) {
+// Defining middleware(just another function fn)
+function userMiddleware(res, req, next) {
 
-//     if (username != "ashishpaul99" && password != "123") {
-//         res.status(403).json({ msg: "User doesn't exist" });
-//     } else {
-//         next();
-//     }
-// };
+    if (username != "ashishpaul99" && password != "123") {
+        res.status(403).json({ msg: "User doesn't exist" });
+    } else {
+        next();
+    }
+};
 
-// function kidneyMiddleware(req, res, next) {
+function kidneyMiddleware(req, res, next) {
 
-//     if (kidneyId != 1 && kidneyId != 2) {
-//         res.status(403).json({ msg: "Incorrect inputs" })
-//     } else {
-//         next();
-//     }
-// };
+    if (kidneyId != 1 && kidneyId != 2) {
+        res.status(403).json({ msg: "Incorrect inputs" })
+    } else {
+        next();
+    }
+};
 
-// app.get("/health-checkup", userMiddleware, kidneyMiddleware, function (req, res) {
-//     console.log("your are healthy");
-// });
+app.get("/health-checkup", userMiddleware, kidneyMiddleware, function (req, res) {
+    console.log("your are healthy");
+});
 
-// app.get("/kdiney-chekup", userMiddleware, kidneyMiddleware, function (req, res) {
-//     console.log("your kidney is healthy");
-// })
+app.get("/kdiney-chekup", userMiddleware, kidneyMiddleware, function (req, res) {
+    console.log("your kidney is healthy");
+})
 
 
-// app.get("/heart-check", userMiddleware, kidneyMiddleware, function (req, res) {
-//     console.log("your heart is healthy");
-// })
+app.get("/heart-check", userMiddleware, kidneyMiddleware, function (req, res) {
+    console.log("your heart is healthy");
+})
 
-// app.listen(port, function () {
-//     console.log(`listening on port ${port}`);
-// })
+app.listen(port, function () {
+    console.log(`listening on port ${port}`);
+})
 
 
 // code explaination:
@@ -372,25 +354,25 @@ const { code } = require("statuses")
 // ->doing somethings before the logic is called.
 // 4. Rate limiter and Calculate requests are two famous middlewares.
 // eg-1:
-// const express=require("express");
-// const app=express();
-// const port=3000;
+const express=require("express");
+const app=express();
+const port=3000;
 
-// let noOfRequests=0;
-// // calculate request middleware
-// function calculateRequest(req,res,next){
-//    noOfRequests++;
-//    console.log(noOfRequests);
-//    next();
-// }
-// app.get("/noOfRequests",calculateRequest,function(req,res){
-//     res.send("request recieved");
+let noOfRequests=0;
+// calculate request middleware
+function calculateRequest(req,res,next){
+   noOfRequests++;
+   console.log(noOfRequests);
+   next();
+}
+app.get("/noOfRequests",calculateRequest,function(req,res){
+    res.send("request recieved");
 
-// } );
+} );
 
-// app.listen(port,function(){
-//     console.log(`listening on port ${port}`);
-// })
+app.listen(port,function(){
+    console.log(`listening on port ${port}`);
+})
 
 // output:
 // listening on port 3000
