@@ -216,6 +216,8 @@ app.listen(port, function () {
 })
 
 
+// ->Still there is lot of code of repetition.
+// ->the real optimum solution is to use middlewares.
 //=>Middlewares is solution for above case use case for avoiding ugly solution like repeating 
 //  code.
 
