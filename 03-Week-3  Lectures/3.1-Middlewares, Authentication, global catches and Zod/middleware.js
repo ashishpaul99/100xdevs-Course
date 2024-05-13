@@ -273,6 +273,10 @@ app.use((req, res, next) => {
 // eg-1:
 // ->when next function is called it will route the request to neighbour function.
 // ->next function can also have next function.
+// ->next is function in itself it can be called when things are fine. In the end chain of function are pre-check before the final function is called.
+// ->next() - if things goes fine then next() is called it routes the request to the next one.
+// ->express lets to chain through middlewares.
+
 
 
 const express = require("express");
