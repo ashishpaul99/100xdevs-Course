@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Num 1:<input oninput="debounceFindSum()" id="a" placeholder="firstnumber"><br>
+    Num 2:<input oninput="debounceFindSum()" id="b" placeholder="secondnumber"><br>
+    
+    <p id="sumOfNum"></p>
+    <script>
+        
+
+        let timeout;
+        function debounceFindSum(){
+            // delay the call to findSum() until debounceFindSum() not been called for specified time and debounceFindSum() function should called atleast once.
+            
+            clearTimeout(timeout);//this function helps to clear previously running timer
+
+            timeout=setTimeout(function(){
+                findSum()
+             },1000);  
+
+           }
+    
+           function findSum(){
+            let a=parseInt(document.getElementById("a").value);
+            let b=parseInt(document.getElementById("b").value);
+            fetch(`http://localhost:3000/sum?a=${a}&b=${b}`).then(function(response){
+                return response.text();
+            }).then(function(sum){
+                document.getElementById("sumOfNum").innerText="Sum of a and b is "+sum;
+            })
+
+           }
+    </script>
+</body>
+</html>
+
+<!-- we can observe debouncng in network tab -->

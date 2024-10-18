@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+</head>
+<body>
+    Num 1: <input type="text" id="a"><br>
+    Num 2: <input type="text" id="b"><br>
+    <button onclick="findSum()">Calculate Sum</button>
+    <p id="sumOfNum"></p>
+    <script>
+        function findSum(){
+            let a=parseInt(document.getElementById("a").value);
+            let b=parseInt(document.getElementById("b").value);
+
+             // Validate that both inputs are numbers
+             if (isNaN(a) || isNaN(b)) {
+                document.getElementById("sumOfNum").innerText = "Please enter valid numbers.";
+                return;
+            }
+
+            // make get request to backend and get the sum
+            fetch(`http://localhost:3000/sum?a=${a}&b=${b}`).then(function(response){
+                return response.text()
+            }).then(function(sum){
+                document.getElementById("sumOfNum").innerText="Sum:"+sum;
+            }).catch(function(error) {
+                    console.error("Error:", error);
+                    document.getElementById("sumOfNum").innerText = "Error calculating sum";
+            });
+
+        }
+        
+    </script>
+</body>
+</html>
+
